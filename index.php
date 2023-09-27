@@ -28,7 +28,7 @@
                 <li <?php if($page == "SignUp") echo "class='active'"; ?>><a href="/src/frontend/public/signup.php">Sign Up</a></li>
             </ul>
         </nav>
-        <section>
+        <section class="container">
     
         </section>
         <footer class="footer">

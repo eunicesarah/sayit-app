@@ -29,7 +29,7 @@
                 <li <?php if($page == "SignUp") echo "class='active'"; ?>><a href="signup.php">Sign Up</a></li>
             </ul>
         </nav>
-        <section>
+        <section class="container">
             <div class="container">
                 <div class="row">
                     <div class="col">

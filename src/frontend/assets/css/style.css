@@ -153,13 +153,6 @@ a:hover{
     }
 }
 
-section{
-    background-color: #FAF9F4;
-    background-size: cover;
-    height: calc(100vh - 80px);
-    margin-bottom: 200px;
-}
-
 .judul{
     text-align: center;
     padding-top: 80px;
