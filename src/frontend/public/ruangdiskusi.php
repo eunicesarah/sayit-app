@@ -30,7 +30,6 @@
             </ul>
         </nav>
         <section class="container">
-            <div class="container">
                 <div class="row">
                     <div class="col">
                         <h3 class="judul">Ruang Diskusi</h3>
@@ -121,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <footer class="footer">
             <div class="footer-container">
