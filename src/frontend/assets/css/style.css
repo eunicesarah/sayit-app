@@ -315,3 +315,8 @@ textarea{
     padding-top: 10px;
     text-align: justify;
 }
+
+.signupbg{
+    display: flex;
+    background: #F3AA98;
+}
