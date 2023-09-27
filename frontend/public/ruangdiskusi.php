@@ -22,7 +22,7 @@
             </label>
             <label class="logo"><span class="say">Say</span><span class="it">It</span></label>
             <ul>
-                <li <?php if($page == "Home") echo "class='active'"; ?>><a href="../index.php">Home</a></li>
+                <li <?php if($page == "Home") echo "class='active'"; ?>><a href="../../../index.php">Home</a></li>
                 <li <?php if($page == "Artikel") echo "class='active'"; ?>><a href="artikel.php">Artikel</a></li>
                 <li <?php if($page == "Ruang Diskusi") echo "class='active'"; ?>><a href="ruangdiskusi.php">Ruang Diskusi</a></li>
                 <li <?php if($page == "Lapor") echo "class='active'"; ?>><a href="lapor.php">Lapor</a></li>
@@ -42,7 +42,7 @@
                                             <img class="foto-profil" src="../assets/img/profile.jpg" alt="" width="50px" height="50px">
                                         </div>
                                         <div class="diskusi-username">
-                                            <a class="username" href="#">Username</a>
+                                            <a class="host-username" href="#">Diky</a>
                                             <p>12 Desember 2020</p>
                                         </div>
                                     </div>
@@ -64,10 +64,10 @@
                                     <div class="komen">
                                     <div class="column">
                                         <div class="diskusi-user">
-                                            <img class="foto-profil" src="../assets/img/profile.jpg" alt="" width="50px" height="50px">
+                                            <img class="foto-profil" src="../assets/img/profile.jpg" alt="" width="35px" height="35px">
                                         </div>
-                                        <div class="diskusi-username">
-                                            <a class="username" href="#">Username</a>
+                                        <div class="komen-username">
+                                            <a class="commenter-username" href="#">Yola</a>
                                             <p>12 Desember 2020</p>
                                         </div>
                                 </div>

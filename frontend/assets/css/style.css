@@ -204,9 +204,15 @@ section{
     margin-top: 5px;
 }
 
-.username{
+.host-username{
     font-size: 20px;
     font-weight: bold;
+    color: #4560A6;
+}
+
+.commenter-username{
+    font-size: 16px;
+    font-weight: regular;
     color: #4560A6;
 }
 
