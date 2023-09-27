@@ -8,6 +8,24 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    min-height: 100%;
+    justify-content: center;
+    position: relative;
+    background-color: #FAF9F4;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #FAF9F4;
+    padding: 60px;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 
 nav{
@@ -53,6 +71,11 @@ nav ul li a{
     text-transform: uppercase;
 }
 
+.active{
+    background: #FAF9F4;
+    color: #F3AA98;
+}
+
 a:active{
     background: #F3AA98;
     color: #FAF9F4;
@@ -61,11 +84,6 @@ a:active{
 a:hover{
     background: #FAF9F4;
     transition: .5s;
-}
-
-.active{
-    background: #FD6B39;
-    color: #FAF9F4;
 }
 
 .check-button{
@@ -90,7 +108,7 @@ a:hover{
 @media (max-width: 952px){
     label.logo{
         font-size: 30px;
-        padding-left: 50px;
+        padding-left: 30px;
     }
 
     nav ul li a{
@@ -103,7 +121,7 @@ a:hover{
         display: block;
     }
 
-    ul{
+    nav ul{
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -125,9 +143,9 @@ a:hover{
         color: #FAF9F4;
     }
 
-    a:hover, a.active{
-        background: none;
-        color: #4560A6;
+    .active{
+        background: #FD6B39;
+        color: #F3AA98;
     }
 
     #nav-check:checked ~ ul{
@@ -139,4 +157,150 @@ section{
     background-color: #FAF9F4;
     background-size: cover;
     height: calc(100vh - 80px);
+    margin-bottom: 200px;
+}
+
+.judul{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.form .input-box{
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.input-box label{
+    color: black;
+}
+
+.form .input-box input{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #4560A6;
+    margin-top: 8px;
+    border: 1px solid #4560A6;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.form .column{
+    display: flex;
+    column-gap: 15px;
+}
+
+.column{
+    display: flex;
+    column-gap: 15px;
+}
+
+.column .diskusi-username{
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.username{
+    font-size: 20px;
+    font-weight: bold;
+    color: #4560A6;
+}
+
+.radio{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.radio::after{
+    color: #4560A6;
+}
+
+textarea{
+    position: relative;
+    height: 150px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #4560A6;
+    margin-top: 8px;
+    border: 1px solid #4560A6;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bukti{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.submit-button{
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.btn{
+    position: relative;
+    padding: 10px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #F3AA98;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #FD6B39; /* Warna latar belakang saat hover */
+  }
+
+.footer-container{
+    background: #4560A6;
+    padding: 3em;
+    grid-column: 1 / -1;
+    margin-top: auto;
+}
+
+.diskusi-box{
+    background: #FAF9F4;
+    box-shadow: grey 0px 0px 10px;
+    border-radius: 6px;
+}
+
+.diskusi-header{
+    padding: 15px;
+}
+
+.diskusi-title{
+    padding-top: 15px;
+}
+
+.diskusi-body{
+    padding: 15px;
+    text-align: justify;
+}
+
+.diskusi-footer{
+    padding: 15px;
+}
+
+.komentar{
+    padding-top: 5px;
+}
+
+.komentar-box{
+    background: #FAF9F4;
+    box-shadow: grey 0px 0px 10px;
+    border-radius: 6px;
+    padding: 15px;
 }
