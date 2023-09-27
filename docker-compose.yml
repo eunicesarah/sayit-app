@@ -2,11 +2,13 @@ version: '3.3'
 services:
   web:
     image: php:apache
+    build: 
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - "./:/var/www/html/"
     ports:
       - 8008:80
-      - 443:443
   db:
     image: mysql:latest
     environment:
@@ -14,6 +16,8 @@ services:
       - MYSQL_USER=php_docker
       - MYSQL_PASSWORD=password
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d" 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
