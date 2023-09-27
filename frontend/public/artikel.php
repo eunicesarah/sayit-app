@@ -15,7 +15,7 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav>
+        <nav class="navbar">
             <input type="checkbox" id="nav-check">
             <label for="nav-check" class="check-button">
                 <i class="fa fa-bars"></i>
@@ -31,7 +31,7 @@
         </nav>
         <section></section>
         <footer class="footer">
-            <div class="container">
+            <div class="footer-container">
                 <div class="row">
                     <div class="footer-col">
                         <ul>
