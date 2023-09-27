@@ -75,7 +75,7 @@ $page = "SignUp";
 
                 <button type="submit" id="register">Register</button><br>
                 <label class="detailtext">Already have an account?</label>
-                <u><a href class="linklogin" href="login.php">Login here</a></u>
+                <u><a class="linklogin" href="login.php">Login here</a></u>
         </div>
         </form>
         </div>
