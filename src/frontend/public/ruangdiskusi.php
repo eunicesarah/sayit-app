@@ -29,8 +29,7 @@
                 <li <?php if($page == "SignUp") echo "class='active'"; ?>><a href="signup.php">Sign Up</a></li>
             </ul>
         </nav>
-        <section>
-            <div class="container">
+        <section class="container">
                 <div class="row">
                     <div class="col">
                         <h3 class="judul">Ruang Diskusi</h3>
@@ -121,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <footer class="footer">
             <div class="footer-container">
