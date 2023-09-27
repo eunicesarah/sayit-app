@@ -70,6 +70,52 @@
                                             <a class="commenter-username" href="#">Yola</a>
                                             <p>12 Desember 2020</p>
                                         </div>
+                                    </div>
+                                    <div class="komen-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="komentar">
+                                <div class="komentar-box">
+                                    <div class="komen">
+                                    <div class="column">
+                                        <div class="diskusi-user">
+                                            <img class="foto-profil" src="../assets/img/profile.jpg" alt="" width="35px" height="35px">
+                                        </div>
+                                        <div class="komen-username">
+                                            <a class="commenter-username" href="#">Kimi</a>
+                                            <p>12 Desember 2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="komen-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="komentar">
+                                <div class="komentar-box">
+                                    <div class="komen">
+                                    <div class="column">
+                                        <div class="diskusi-user">
+                                            <img class="foto-profil" src="../assets/img/profile.jpg" alt="" width="35px" height="35px">
+                                        </div>
+                                        <div class="komen-username">
+                                            <a class="commenter-username" href="#">Kimi</a>
+                                            <p>12 Desember 2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="komen-body">
+                                        <div class="input-box">
+                                            <label for="long-text">Komentar</label>
+                                            <br>
+                                            <textarea id="long-text" name="long-text" rows="4" cols="50" placeholder="Tambahkan komentar"></textarea>
+                                            <button class="btn">Submit</button>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -17,7 +17,7 @@ body{
 .container{
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: #FAF9F4;
     padding: 60px;
 }
@@ -309,4 +309,9 @@ textarea{
     box-shadow: grey 0px 0px 10px;
     border-radius: 6px;
     padding: 15px;
+}
+
+.komen-body{
+    padding-top: 10px;
+    text-align: justify;
 }
