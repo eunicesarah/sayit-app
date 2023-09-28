@@ -1,6 +1,8 @@
 <?php
     $title = "SayIt";
     $page = "Ruang Diskusi";
+    session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +28,14 @@
                 <li <?php if($page == "Artikel") echo "class='active'"; ?>><a href="artikel.php">Artikel</a></li>
                 <li <?php if($page == "Ruang Diskusi") echo "class='active'"; ?>><a href="ruangdiskusi.php">Ruang Diskusi</a></li>
                 <li <?php if($page == "Lapor") echo "class='active'"; ?>><a href="lapor.php">Lapor</a></li>
-                <li <?php if($page == "SignUp") echo "class='active'"; ?>><a href="signup.php">Sign Up</a></li>
+                <?php
+                if (isset($_SESSION["user_email"])) {
+                    echo "<li><a href='logout.php'>Log Out</a></li>";
+                }
+                else{
+                    echo "<li><a href='signup.php'>Sing Up</a></li>";
+                }
+                ?>
             </ul>
         </nav>
         <section class="container">

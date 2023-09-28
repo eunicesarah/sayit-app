@@ -1,38 +1,39 @@
 <?php
 $title = "SayIt";
 $page = "LogIn";
+session_start();
+
 
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mysqli = require __DIR__ . "../../../db.php";
 
-    $sql = sprintf(
-        "SELECT * FROM user WHERE user_email = '%s'",
-        $mysqli->real_escape_string($_POST["email"])
-    );
+    // Sanitize and escape user input
+    $email = mysqli_real_escape_string($mysqli, $_POST["email"]);
+    $password = mysqli_real_escape_string($mysqli, $_POST["password"]);
 
+    $sql = "SELECT user_id, user_email, user_pass FROM user WHERE user_email = '$email'";
     $result = $mysqli->query($sql);
 
-    $user = $result->fetch_assoc();
-
-    if ($user) {
-        if (password_verify($_POST["password"], $user["user_pass"])) {
-
-            session_start();
-
+    if ($result && $result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+        echo "<script>console.log('Debug Objects: " . json_encode($user) . "' );</script>";
+        echo "<script>console.log('Debug Objects: " .  password_verify($password, $user["user_pass"]) . "' );</script>";
+        if (password_verify($password, $user["user_pass"])) {
+            echo "<script>console.log('password Objects: " . $password . "' );</script>";
+            echo "<script>console.log('password Objects: " . $user["user_pass"] . "' );</script>";
             session_regenerate_id();
-
             $_SESSION["user_id"] = $user["user_id"];
 
             header("Location: ../../../../index.php");
             exit;
         }
     }
-
     $is_invalid = true;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </li>
             <li <?php if ($page == "Lapor")
                 echo "class='active'"; ?>><a href="lapor.php">Lapor</a></li>
-            <li <?php if ($page == "SignUp")
-                echo "class='active'"; ?>><a href="signup.php">Sign Up</a></li>
+            <?php
+            
+            if (isset($_SESSION["user_email"])) {
+                echo "<li><a href='logout.php'>Log Out</a></li>";
+            } else {
+                echo "<li><a href='signup.php'>Sing Up</a></li>";
+            }
+            ?>
         </ul>
     </nav>
     <section class="signupcont">

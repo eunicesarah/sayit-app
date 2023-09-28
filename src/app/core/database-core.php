@@ -1,0 +1,1 @@
+<!-- isinya class database kyk db.php sama fungsi" query -->

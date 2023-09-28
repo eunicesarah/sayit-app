@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt = $mysqli->stmt_init();
 
         if ($stmt->prepare($query)) {
-            $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $password_hash = $_POST['password'];
 
             $stmt->bind_param('ssssii', $_POST["name"], $_POST["email"], $password_hash, $_POST["gender"], $_POST["phone"], $_POST["age"]);
 

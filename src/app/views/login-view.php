@@ -1,0 +1,1 @@
+<!-- buat view, biasanya ada atribut data sama fungsi construct dan render -->

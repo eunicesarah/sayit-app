@@ -1,6 +1,7 @@
 <?php
 $title = "SayIt";
 $page = "SignUp";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,14 +33,20 @@ $page = "SignUp";
             </li>
             <li <?php if ($page == "Lapor")
                 echo "class='active'"; ?>><a href="lapor.php">Lapor</a></li>
-            <li <?php if ($page == "SignUp")
-                echo "class='active'"; ?>><a href="signup.php">Sign Up</a></li>
+             <?php
+                if (isset($_SESSION["user_email"])) {
+                    echo "<li><a href='logout.php'>Log Out</a></li>";
+                }
+                else{
+                    echo "<li><a href='signup.php'>Sign Up</a></li>";
+                }
+                ?>
         </ul>
     </nav>
     <section class="signupcont">
         <div class="boxsignup">
             <h1 class="judulsignup">Sign Up</h1>
-            <form class="form" action="./../../backend/validate-signup.php" method="post">
+            <form class="form" action="./../../models/validate-signup.php" method="post">
                 <div class="column">
                     <div class="input-box">
                         <label for="name" class="labelsignup">Name</label><br>

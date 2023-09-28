@@ -1,0 +1,1 @@
+<!-- isinya fungsi" untuk ngecek/ validasi -->
