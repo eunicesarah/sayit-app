@@ -30,7 +30,57 @@
             </ul>
         </nav>
         <section class="container">
-
+            <input type="text" class="search-bar" placeholder="Cari artikel...">
+            <div class="article-container">
+                <div class="article">
+                    <a href="article1.html" class="article-link">
+                        <img src="../assets/img/profile.jpg" alt="Artikel 1">
+                        <div class="src/frontend/assets/img/capek.jpeg">Title 1</div>
+                        <div class="article-date">14/03/2002</div>
+                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </a>
+                </div>
+                <div class="article">
+                    <a href="article2.html" class="article-link">
+                        <img src="../assets/img/capek.jpeg" alt="Artikel 2">
+                        <div class="article-title">Title 2</div>
+                        <div class="article-date">14/03/2002</div>
+                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </a>
+                </div>
+                <div class="article">
+                    <a href="article3.html" class="article-link">
+                        <img src="../assets/img/sulit.jpeg" alt="Artikel 3">
+                        <div class="article-title">Title 3</div>
+                        <div class="article-date">14/03/2002</div>
+                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </a>
+                </div>
+                <div class="article">
+                    <a href="article1.html" class="article-link">
+                        <img src="../assets/img/profile.jpg" alt="Artikel 4">
+                        <div class="src/frontend/assets/img/capek.jpeg">Title 1</div>
+                        <div class="article-date">14/03/2002</div>
+                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </a>
+                </div>
+                <div class="article">
+                    <a href="article2.html" class="article-link">
+                        <img src="../assets/img/capek.jpeg" alt="Artikel 5">
+                        <div class="article-title">Title 2</div>
+                        <div class="article-date">14/03/2002</div>
+                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </a>
+                </div>
+                <div class="article">
+                    <a href="article3.html" class="article-link">
+                        <img src="../assets/img/sulit.jpeg" alt="Artikel 6">
+                        <div class="article-title">Title 3</div>
+                        <div class="article-date">14/03/2002</div>
+                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </a>
+                </div>
+            </div>
         </section>
         <footer class="footer">
             <div class="footer-container">
