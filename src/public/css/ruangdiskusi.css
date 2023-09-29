@@ -227,6 +227,7 @@ section{
     background: #FAF9F4;
     box-shadow: grey 0px 0px 10px;
     border-radius: 6px;
+    margin-bottom: 30px;
 }
 
 .diskusi-header{
@@ -244,22 +245,6 @@ section{
 
 .diskusi-footer{
     padding: 15px;
-}
-
-.komentar{
-    padding-top: 5px;
-}
-
-.komentar-box{
-    background: #FAF9F4;
-    box-shadow: grey 0px 0px 10px;
-    border-radius: 6px;
-    padding: 15px;
-}
-
-.komen-body{
-    padding-top: 10px;
-    text-align: justify;
 }
 
 .form .input-box{

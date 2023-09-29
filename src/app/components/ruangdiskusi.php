@@ -48,63 +48,52 @@
                                 <div class="diskusi-footer">
                                 </div>
                             </div>
-                            <div class="komentar">
-                                <div class="komentar-box">
-                                    <div class="komen">
+                            <div class="diskusi-box">
+                                <div class="diskusi-header">
                                     <div class="column">
                                         <div class="diskusi-user">
-                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="35px" height="35px">
+                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="50px" height="50px">
                                         </div>
-                                        <div class="komen-username">
-                                            <a class="commenter-username" href="#">Yola</a>
+                                        <div class="diskusi-username">
+                                            <a class="host-username" href="#">Diky</a>
                                             <p>12 Desember 2020</p>
                                         </div>
                                     </div>
-                                    <div class="komen-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
+                                    <div class="diskusi-title">
+                                        <h4>Apakah pelecehan seksual dapat terjadi di lingkungan sekolah?</h4>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="komentar">
-                                <div class="komentar-box">
-                                    <div class="komen">
-                                    <div class="column">
-                                        <div class="diskusi-user">
-                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="35px" height="35px">
-                                        </div>
-                                        <div class="komen-username">
-                                            <a class="commenter-username" href="#">Kimi</a>
-                                            <p>12 Desember 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="komen-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                    </div>
+                                <div class="diskusi-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                </div>
+                                <div class="diskusi-footer">
                                 </div>
                             </div>
-                            <div class="komentar">
-                                <div class="komentar-box">
-                                    <div class="komen">
+                            <div class="diskusi-box">
+                                <div class="diskusi-header">
                                     <div class="column">
                                         <div class="diskusi-user">
-                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="35px" height="35px">
+                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="50px" height="50px">
                                         </div>
-                                        <div class="komen-username">
-                                            <a class="commenter-username" href="#">Kimi</a>
+                                        <div class="diskusi-username">
+                                            <a class="host-username" href="#">Diky</a>
                                             <p>12 Desember 2020</p>
                                         </div>
                                     </div>
-                                    <div class="komen-body">
-                                        <div class="input-box">
-                                            <label for="long-text">Komentar</label>
-                                            <br>
-                                            <textarea id="long-text" name="long-text" rows="4" cols="50" placeholder="Tambahkan komentar"></textarea>
-                                            <button class="btn">Submit</button>
-                                        </div>
+                                    <div class="diskusi-title">
+                                        <h4>Apakah pelecehan seksual dapat terjadi di lingkungan sekolah?</h4>
                                     </div>
-                                    </div>
+                                </div>
+                                <div class="diskusi-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                </div>
+                                <div class="diskusi-footer">
                                 </div>
                             </div>
                         </div>
