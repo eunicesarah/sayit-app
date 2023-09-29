@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    min-height: 100%;
+    justify-content: center;
+    position: relative;
+    background-color: #FAF9F4;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #FAF9F4;
+    padding: 60px;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav{
+    background: #4560A6;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo{
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+label.logo .say{
+    color: #FAF9F4;
+    font-weight: bold;
+}
+
+label.logo .it{
+    color: #F3AA98;
+    font-weight: bold;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: #F3AA98;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.active{
+    background: #FAF9F4;
+    color: #F3AA98;
+}
+
+a:active{
+    background: #F3AA98;
+    color: #FAF9F4;
+}
+
+a:hover{
+    background: #FAF9F4;
+    transition: .5s;
+}
+
+.check-button{
+    font-size: 30px;
+    color: #FAF9F4;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.check-button.active, .check-button:hover{
+    color: #F3AA98;
+    transition: .5s;
+}
+
+#nav-check{
+    display: none;
+}
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 30px;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .check-button{
+        display: block;
+    }
+
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #F3AA98;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+        color: #FAF9F4;
+    }
+
+    .active{
+        background: #FD6B39;
+        color: #F3AA98;
+    }
+
+    #nav-check:checked ~ ul{
+        left: 0;
+    }
+}
+
+section{
+    background-color: #FAF9F4;
+    background-size: cover;
+    height: 100%;
+    margin-bottom: 200px;
+}
+
+.footer-container{
+    background: #4560A6;
+    padding: 3em;
+    grid-column: 1 / -1;
+    margin-top: auto;
+}

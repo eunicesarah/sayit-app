@@ -10,39 +10,15 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/src/public/css/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <input type="checkbox" id="nav-check">
-        <label for="nav-check" class="check-button">
-            <i class="fa fa-bars"></i>
-        </label>
-        <label class="logo"><span class="say">Say</span><span class="it">It</span></label>
-        <ul>
-            <li <?php if ($page == "Home")
-                echo "class='active'"; ?>><a href="../../../../index.php">Home</a></li>
-            <li <?php if ($page == "Artikel")
-                echo "class='active'"; ?>><a href="artikel.php">Artikel</a></li>
-            <li <?php if ($page == "Ruang Diskusi")
-                echo "class='active'"; ?>><a href="ruangdiskusi.php">Ruang Diskusi</a>
-            </li>
-            <li <?php if ($page == "Lapor")
-                echo "class='active'"; ?>><a href="lapor.php">Lapor</a></li>
-             <?php
-                if (isset($_SESSION["user_email"])) {
-                    echo "<li><a href='logout.php'>Log Out</a></li>";
-                }
-                else{
-                    echo "<li><a href='signup.php'>Sign Up</a></li>";
-                }
-                ?>
-        </ul>
-    </nav>
+    <!-- Navbar -->
+    <?php include (dirname(__DIR__)) . "/components/navbar.php" ?>
+    
     <section class="signupcont">
         <div class="boxsignup">
             <h1 class="judulsignup">Sign Up</h1>
