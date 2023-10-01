@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $title = "SayIt";
 $page = "LogIn";
 session_start();
@@ -18,15 +19,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
-        echo "<script>console.log('Debug Objects: " . json_encode($user) . "' );</script>";
+        echo "<script>console.log('lalala " . json_encode($user) . "' );</script>";
+        echo "<script>console.log('lalala " . $user["user_pass"] . "' );</script>";
+        
         echo "<script>console.log('Debug Objects: " .  password_verify($password, $user["user_pass"]) . "' );</script>";
-        if (password_verify($password, $user["user_pass"])) {
-            echo "<script>console.log('password Objects: " . $password . "' );</script>";
+        if ($password == $user["user_pass"]) {
+            echo "<script>console.log('lalalala " . $password . "' );</script>";
             echo "<script>console.log('password Objects: " . $user["user_pass"] . "' );</script>";
-            session_regenerate_id();
+            // session_regenerate_id();
             $_SESSION["user_id"] = $user["user_id"];
 
-            header("Location: home.php");
+            echo "<script>console.log('dah masuk " . $password . "' );</script>";
+
+
+            header("location: home.php");
             exit;
         }
     }
@@ -41,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SayIt</title>
-    <link rel="stylesheet" href="/src/public/css/styles.css">
+    <link rel="stylesheet" href="/src/public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>

@@ -17,7 +17,7 @@
     </head>
     <body>
         <!-- Navbar -->
-        <?php include (dirname(__DIR__)) . "/tugas-besar-1/src/app/components/navbar.php" ?>
+        <?php include (dirname(__DIR__)) . "/src/app/components/navbar.php" ?>
         
         <section class="container">
     
