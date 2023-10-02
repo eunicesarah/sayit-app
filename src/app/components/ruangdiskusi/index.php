@@ -27,7 +27,7 @@
                                 <div class="diskusi-header">
                                     <div class="column">
                                         <div class="diskusi-user">
-                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="50px" height="50px">
+                                            <img class="foto-profil" src="src\public\img\profile.jpg" alt="" width="50px" height="50px">
                                         </div>
                                         <div class="diskusi-username">
                                             <a class="host-username" href="#">Diky</a>
@@ -51,7 +51,7 @@
                                 <div class="diskusi-header">
                                     <div class="column">
                                         <div class="diskusi-user">
-                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="50px" height="50px">
+                                            <img class="foto-profil" src="src\public\img\profile.jpg" alt="" width="50px" height="50px">
                                         </div>
                                         <div class="diskusi-username">
                                             <a class="host-username" href="#">Diky</a>
@@ -75,7 +75,7 @@
                                 <div class="diskusi-header">
                                     <div class="column">
                                         <div class="diskusi-user">
-                                            <img class="foto-profil" src="../../public/img/profile.jpg" alt="" width="50px" height="50px">
+                                            <img class="foto-profil" src="src\public\img\profile.jpg" alt="" width="50px" height="50px">
                                         </div>
                                         <div class="diskusi-username">
                                             <a class="host-username" href="#">Diky</a>

@@ -23,15 +23,15 @@
             <div class="article-container">
                 <div class="article">
                     <a href="article1.html" class="article-link">
-                        <img src="../../public/img/capek.jpeg" alt="Artikel 1">
-                        <div class="../../public/img/capek.jpeg">Title 1</div>
+                        <img src="src\public\img\capek.jpeg" alt="Artikel 1">
+                        <div class="article-title">Title 1</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </a>
                 </div>
                 <div class="article">
                     <a href="article2.html" class="article-link">
-                        <img src="../../public/img/capek.jpeg" alt="Artikel 2">
+                        <img src="src\public\img\capek.jpeg" alt="Artikel 2">
                         <div class="article-title">Title 2</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="article">
                     <a href="article3.html" class="article-link">
-                        <img src="../../public/img/sulit.jpeg" alt="Artikel 3">
+                        <img src="src\public\img\sulit.jpeg" alt="Artikel 3">
                         <div class="article-title">Title 3</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -47,15 +47,15 @@
                 </div>
                 <div class="article">
                     <a href="article1.html" class="article-link"> 
-                        <img src="../../../../../public/img/profile.jpg" alt="Artikel 4">
-                        <div class="../../public/img/capek.jpeg">Title 1</div>
+                        <img src="src\public\img\profile.jpg" alt="Artikel 4">
+                        <div class="article-title">Title 1</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </a>
                 </div>
                 <div class="article">
                     <a href="article2.html" class="article-link">
-                        <img src="../../public/img/capek.jpeg" alt="Artikel 5">
+                        <img src="src\public\img\capek.jpeg" alt="Artikel 5">
                         <div class="article-title">Title 2</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="article">
                     <a href="article3.html" class="article-link">
-                        <img src="../../public/img/sulit.jpeg" alt="Artikel 6">
+                        <img src="src\public\img\sulit.jpeg" alt="Artikel 6">
                         <div class="article-title">Title 3</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
