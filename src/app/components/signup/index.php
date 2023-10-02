@@ -21,7 +21,7 @@ $page = "SignUp";
     <section class="signupcont">
         <div class="boxsignup">
             <h1 class="judulsignup">Sign Up</h1>
-            <form class="form" action="./../../models/validate-signup.php" method="post">
+            <form class="form" action="/src/backend/validate-signup.php" method="post">
                 <div class="column">
                     <div class="input-box">
                         <label for="name" class="labelsignup">Name</label><br>

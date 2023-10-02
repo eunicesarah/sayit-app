@@ -19,7 +19,27 @@
         <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
         
         <section class="container">
-    
+            <div class= "slider-container">
+                <div class="slider-inner">
+                    <div class="slider-item">
+                        <img id= "slide-1" src="../../public/img/profile.jpg" alt="SayIt">
+                        <img id= "slide-2" src="../../public/img/capek.jpeg" alt="SayIt">
+                        <img id= "slide-3" src="../../public/img/sulit.jpeg" alt="SayIt">
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <a href="#slide-1" ></a>
+                    <a href="#slide-2" ></a>
+                    <a href="#slide-3" ></a>
+                </div>
+                <button class="btn-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="btn-next"><i class="fas fa-chevron-right"></i></button>
+
+            </div>
+            <div class= "hot-container">
+                <h3 class="judul">Hot News</h3>
+                <hr class="hot-line" size="1px" width="300px" align="center" color="black">
+            </div>
         </section>
         <footer class="footer">
             <div class="footer-container">
