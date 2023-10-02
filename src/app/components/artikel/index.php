@@ -15,7 +15,7 @@
     </head>
     <body>
         <!-- Navbar -->
-        <?php include (dirname(__DIR__)) . "/components/navbar.php" ?>
+        <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
 
 
         <section class="container">
@@ -46,8 +46,8 @@
                     </a>
                 </div>
                 <div class="article">
-                    <a href="article1.html" class="article-link">
-                        <img src="../../public/img/profile.jpg" alt="Artikel 4">
+                    <a href="article1.html" class="article-link"> 
+                        <img src="../../../../../public/img/profile.jpg" alt="Artikel 4">
                         <div class="../../public/img/capek.jpeg">Title 1</div>
                         <div class="article-date">14/03/2002</div>
                         <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>

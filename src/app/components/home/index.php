@@ -1,7 +1,6 @@
 <?php
     $title = "SayIt";
     $page = "Home";
-    session_start();
 
 ?>
 
@@ -17,7 +16,7 @@
     </head>
     <body>
         <!-- Navbar -->
-        <?php include (dirname(__DIR__)) . "/components/navbar.php" ?>
+        <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
         
         <section class="container">
     

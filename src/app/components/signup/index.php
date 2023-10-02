@@ -1,7 +1,6 @@
 <?php
 $title = "SayIt";
 $page = "SignUp";
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +16,7 @@ session_start();
 
 <body>
     <!-- Navbar -->
-    <?php include (dirname(__DIR__)) . "/components/navbar.php" ?>
+    <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
     
     <section class="signupcont">
         <div class="boxsignup">
@@ -58,11 +57,30 @@ session_start();
 
                 <button type="submit" id="register">Register</button><br>
                 <label class="detailtext">Already have an account?</label>
-                <u><a class="linklogin" href="login.php">Login here</a></u>
+                <u><a class="linklogin" href="/?login">Login here</a></u>
         </div>
         </form>
         </div>
     </section>
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="row">
+                    <div class="footer-col">
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4></h4>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Our Partner</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 
 </html>

@@ -172,7 +172,7 @@ section{
     position: relative;
     background: #F3AA98;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     padding: 3.75rem;
 }
 
@@ -340,4 +340,14 @@ section{
 .linklogin:hover{
     color: #F3AA98;
     transition: .5s;
+}
+
+.labelsignup{
+    color: #FAF9F4;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
