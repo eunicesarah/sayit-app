@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
         <title>SayIt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/src/public/css/home.css">        	
+        <link rel="stylesheet" href="/src/public/css/style.css">        	
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
@@ -22,9 +22,9 @@
             <div class= "slider-container">
                 <div class="slider-inner">
                     <div class="slider-item">
-                        <img id= "slide-1" src="../../public/img/profile.jpg" alt="SayIt">
-                        <img id= "slide-2" src="../../public/img/capek.jpeg" alt="SayIt">
-                        <img id= "slide-3" src="../../public/img/sulit.jpeg" alt="SayIt">
+                        <img id= "slide-1" src="src\public\img\profile.jpg" alt="SayIt">
+                        <img id= "slide-2" src="src\public\img\capek.jpeg" alt="SayIt">
+                        <img id= "slide-3" src="src\public\img\sulit.jpeg" alt="SayIt">
                     </div>
                 </div>
                 <div class="slider-nav">
