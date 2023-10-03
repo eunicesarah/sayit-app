@@ -14,6 +14,11 @@
         <?php
         if (isset($_SESSION["user_id"])) {
             echo "<li";
+                if ($page == 'Profile') {
+                    echo " class='active'";
+                }
+                echo "><a href='/?profile'>Profile</a></li>";
+            echo "<li";
                 if ($page == 'LogOut') {
                     echo " class='active'";
                 }
