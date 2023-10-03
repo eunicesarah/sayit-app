@@ -1,75 +1,69 @@
 <?php
+
     $title = "SayIt";
     $page = "Artikel";
+
+
+    $servername = "db";
+    $username = "php_docker";
+    $password = "password";
+    $dbname = "php_docker"; 
+    
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // $conn = mysqli_connect(
+    //     $hostname = ini_get("mysqli.default_host"),
+    //     $username = ini_get("mysqli.default_user"),
+    //     $password = ini_get("mysqli.default_pw"),
+    //     $database = "",
+    //     $port = ini_get("mysqli.default_port"),
+    //     $socket = ini_get("mysqli.default_socket")
+    // );
+    if (!$conn) {
+        die("Koneksi ke database gagal: " . mysqli_connect_error());
+    }
+
+    $query = "SELECT * FROM article";
+    $result = mysqli_query($conn, $query);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+
         <meta charset="UTF-8">
         <title>SayIt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/src/public/css/artikel.css">        	
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
+</head>
 
 
-        <section class="container">
-            <input type="text" class="search-bar" placeholder="Cari artikel...">
-            <div class="article-container">
-                <div class="article">
-                    <a href="article1.html" class="article-link">
-                        <img src="src\public\img\capek.jpeg" alt="Artikel 1">
-                        <div class="article-title">Title 1</div>
-                        <div class="article-date">14/03/2002</div>
-                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </a>
-                </div>
-                <div class="article">
-                    <a href="article2.html" class="article-link">
-                        <img src="src\public\img\capek.jpeg" alt="Artikel 2">
-                        <div class="article-title">Title 2</div>
-                        <div class="article-date">14/03/2002</div>
-                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </a>
-                </div>
-                <div class="article">
-                    <a href="article3.html" class="article-link">
-                        <img src="src\public\img\sulit.jpeg" alt="Artikel 3">
-                        <div class="article-title">Title 3</div>
-                        <div class="article-date">14/03/2002</div>
-                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </a>
-                </div>
-                <div class="article">
-                    <a href="article1.html" class="article-link"> 
-                        <img src="src\public\img\profile.jpg" alt="Artikel 4">
-                        <div class="article-title">Title 1</div>
-                        <div class="article-date">14/03/2002</div>
-                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </a>
-                </div>
-                <div class="article">
-                    <a href="article2.html" class="article-link">
-                        <img src="src\public\img\capek.jpeg" alt="Artikel 5">
-                        <div class="article-title">Title 2</div>
-                        <div class="article-date">14/03/2002</div>
-                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </a>
-                </div>
-                <div class="article">
-                    <a href="article3.html" class="article-link">
-                        <img src="src\public\img\sulit.jpeg" alt="Artikel 6">
-                        <div class="article-title">Title 3</div>
-                        <div class="article-date">14/03/2002</div>
-                        <div class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </a>
-                </div>
-            </div>
+<body>
+    <!-- Navbar -->
+    <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
+
+    <section class="container">
+        <input type="text" class="search-bar" placeholder="Cari artikel...">
+        <div class="article-container">
+            <?php
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="article">';
+                    echo '<a >';
+                    echo '<img src="' . $row['article_image'] .  '">';
+                    echo '<div class="article-title">' . $row['article_judul'] . '</div>';
+                    echo '<div class="article-date">' . $row['article_date'] . '</div>';
+                    echo '<div class="article-description">' . $row['article_content'] . '</div>';
+                    echo '</a>';
+                    echo '</div>';
+
+
+                }
+            ?>
+        </div>
+    </section>
         </section>
         <footer class="footer">
             <div class="footer-container">
@@ -92,3 +86,8 @@
         </footer>
     </body>
 </html>
+
+<?php
+    // 4. Menutup koneksi ke database
+    mysqli_close($conn);
+?>
