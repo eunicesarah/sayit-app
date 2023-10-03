@@ -197,17 +197,17 @@ section{
 .labelsignup{
     color: #FAF9F4;
     color: #FFF;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-family: 'Poppins', sans-serif;
 }
 
 .input-box.labelsignup{
     color: #FAF9F4;
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 500;
@@ -218,7 +218,7 @@ section{
 .gender-box.labelsignup{
     color: #FAF9F4;
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 500;
@@ -229,7 +229,7 @@ section{
 .column .input-box .labelsignup{
     color: #FAF9F4;
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 500;
@@ -286,7 +286,7 @@ section{
 }
 
 .input-box label{
-    color: black;
+    color: #FFF;
 }
 
 .form .input-box input{
@@ -320,7 +320,7 @@ section{
 .detailtext{
     color: #FAF9F4;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 500;
@@ -330,7 +330,7 @@ section{
 .linklogin{
     color: #FAF9F4;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 500;
@@ -340,4 +340,33 @@ section{
 .linklogin:hover{
     color: #F3AA98;
     transition: .5s;
+}
+
+.btn{
+    position: relative;
+    padding: 10px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #F3AA98;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-hover{
+    background: #FD6B39;
+}
+
+.submit-button{
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
 }

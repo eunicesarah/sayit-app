@@ -42,7 +42,7 @@ $page = "SignUp";
                         <input type="password" id="password" name="password">
                     </div>
                 </div>
-
+                <br>
                 <div class="genderbox">
                     <label for="gender" class="labelsignup">Gender</label><br>
                     <input type="radio" id="female" name="gender" value="Female">
@@ -50,10 +50,11 @@ $page = "SignUp";
                     <input type="radio" id="male" name="gender" value="Male">
                     <label for="male" class="labelsignup">Male</label>
                 </div>
-
-                <button type="submit" id="register">Register</button><br>
+                <div class="submit-button">
+                <button type="submit" class="btn" id="register">Register</button><br>
                 <label class="detailtext">Already have an account?</label>
                 <u><a class="linklogin" href="/?login">Login here</a></u>
+                </div>
         </div>
         </form>
         </div>
