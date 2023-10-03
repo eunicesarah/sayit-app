@@ -9,12 +9,23 @@
         <li <?php if($page == "Artikel") echo "class='active'"; ?>><a href="/?artikel">Artikel</a></li>
         <li <?php if($page == "Ruang Diskusi") echo "class='active'"; ?>><a href="/?ruangdiskusi">Ruang Diskusi</a></li>
         <li <?php if($page == "Lapor") echo "class='active'"; ?>><a href="/?lapor">Lapor</a></li>
+        <!-- <li <?php if($page == "SignUp" AND !isset($_SESSION["user_email"])) echo "class='active'"; ?>><a href="/?signup">Sign Up</a></li> -->
+        <!-- <li <?php if($page == "LogOut" AND isset($_SESSION["user_email"])) echo "class='active'"; ?>><a href="/?logout">Log Out</a></li> -->
         <?php
-        if (isset($_SESSION["user_email"])) {
-            echo "<li>", "<a href='/?home'>Log Out</a></li>";
+        if (isset($_SESSION["user_id"])) {
+            echo "<li";
+                if ($page == 'LogOut') {
+                    echo " class='active'";
+                }
+                echo "><a href='/?logout'>Log Out</a></li>";
+                echo "<script> console.log('masuk')</script>";
         }
         else{
-            echo "<li><a href='/?signup'>Sign Up</a></li>";
+            echo "<li";
+                if ($page == 'SignUp') {
+                    echo " class='active'";
+                }
+                echo "><a href='/?signup'>Sign Up</a></li>";
         }
         ?>
     </ul>
