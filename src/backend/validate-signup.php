@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/../db.php"; 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errors = array();
 
@@ -21,16 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($_POST['phone'])) {
         $errors[] = 'Please enter your phone number';
         echo "phone";
-    }
+    } 
+    // elseif (!preg_match('^\(\+62|62|0)8[1-9][0-9]{6,9}$^', $_POST['phone'])){
+    //     $errors[] = 'Invalid phone number format';
+    //     echo "phone";
+    // }
 
     // Validate age
-    if (empty($_POST['age'])) {
-        $errors[] = 'Please enter your age';
-        echo "age";
-    } elseif (!is_numeric($_POST['age'])) {
-        $errors[] = 'Age must be a number';
-        echo "age";
-    }
+    // if (empty($_POST['age'])) {
+    //     $errors[] = 'Please enter your age';
+    //     echo "age";
+    // } elseif (!is_numeric($_POST['age'])) {
+    //     $errors[] = 'Age must be a number';
+    //     echo "age";
+    // } 
 
     // Validate password
     if (empty($_POST['password'])) {
@@ -45,14 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // All input is valid, proceed to insert into the database
         $mysqli = require __DIR__ . "/../db.php";
 
-        $query = "INSERT INTO user (user_name, user_email, user_pass, user_gender, user_phone, user_age) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO user (user_name, user_email, user_pass, user_gender, user_phone, roles) VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = $mysqli->stmt_init();
 
         if ($stmt->prepare($query)) {
             $password_hash = $_POST['password'];
-
-            $stmt->bind_param('ssssii', $_POST["name"], $_POST["email"], $password_hash, $_POST["gender"], $_POST["phone"], $_POST["age"]);
+            $role = 'user';
+            $stmt->bind_param('ssssii', $_POST["name"], $_POST["email"], $password_hash, $_POST["gender"], $_POST["phone"], $role);
 
             if ($stmt->execute()) {
                 echo "User registered successfully.";

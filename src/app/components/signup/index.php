@@ -43,10 +43,6 @@ $page = "SignUp";
                     </div>
                 </div>
 
-                <div class="input-box">
-                    <label for="age" class="labelsignup">Age</label><br>
-                    <input type="int" id="age" name="age">
-                </div>
                 <div class="genderbox">
                     <label for="gender" class="labelsignup">Gender</label><br>
                     <input type="radio" id="female" name="gender" value="Female">

@@ -7,7 +7,7 @@ $page = "LogIn";
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $mysqli = require __DIR__ . "../../../db.php";
+    $mysqli = require __DIR__ . "/../../../db.php";
 
     // Sanitize and escape user input
     $email = mysqli_real_escape_string($mysqli, $_POST["email"]);
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>console.log('dah masuk " . $password . "' );</script>";
 
 
-            header("location: home.php");
+            echo "<script>location.href='/?home'</script>";
             exit;
         }
     }
@@ -46,11 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SayIt</title>
-<<<<<<< HEAD:src/app/components/login/index.php
     <link rel="stylesheet" href="/src/public/css/login.css">
-=======
-    <link rel="stylesheet" href="/src/public/css/style.css">
->>>>>>> be65bebf0070b4f086e37ac8827af7bca87e516c:src/app/components/login.php
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -76,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <button type="submit" id="login">Log In</button><br>
                 <label class="detailtext">Do not have an account?</label>
-                <u><a class="linklogin" href="signup.php">Register here</a></u>
+                <u><a class="linklogin" href="/?signup">Register here</a></u>
             </form>
     </section>
     <footer class="footer">
