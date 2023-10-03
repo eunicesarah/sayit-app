@@ -194,9 +194,9 @@ section{
     padding-top: 1.2rem;
 }
 
-.labelsignup{
+.labelsignup label{
     color: #FAF9F4;
-    color: #FFF;
+    color: #FAF9F4;
     font-family: Inter;
     font-size: 1rem;
     font-style: normal;
@@ -286,7 +286,8 @@ section{
 }
 
 .input-box label{
-    color: black;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;;
 }
 
 .form .input-box input{
@@ -320,7 +321,7 @@ section{
 .detailtext{
     color: #FAF9F4;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 500;
@@ -335,6 +336,7 @@ section{
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-family: 'Poppins', sans-serif;
 }
 
 .linklogin:hover{
@@ -350,4 +352,26 @@ section{
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.submit-button{
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.btn{
+    position: relative;
+    padding: 10px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #F3AA98;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 6px;
+    border: none;
+    text-align: center;
 }

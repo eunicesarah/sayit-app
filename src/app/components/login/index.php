@@ -70,9 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="password" class="labelsignup">Password</label><br>
                     <input type="password" id="password" name="password">
                 </div>
-                <button type="submit" id="login">Log In</button><br>
+                <div class="submit-button">
+                <button type="submit" class="btn" id="login">Log In</button><br>
                 <label class="detailtext">Do not have an account?</label>
                 <u><a class="linklogin" href="/?signup">Register here</a></u>
+                </div>
             </form>
     </section>
     <footer class="footer">

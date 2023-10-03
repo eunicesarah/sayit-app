@@ -160,16 +160,6 @@ section{
     margin-bottom: 200px;
 }
 
-.judul{
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 30px;
-}
-
-.logout-narasi {
-    text-align: center;
-}
-
 .footer-container{
     background: #4560A6;
     padding: 3em;
@@ -177,51 +167,8 @@ section{
     margin-top: auto;
 }
 
-.btn{
-    position: relative;
-    padding: 10px 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background: #F3AA98;
-    font-size: 1rem;
-    text-decoration: none;
-    overflow: hidden;
-    transition: .5s;
-    letter-spacing: 4px;
-    border-radius: 6px;
-    border: none;
+.judul{
     text-align: center;
-    justify-content: center;
-}
-
-.submit-button{
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.btn:hover {
-    background-color: #FD6B39; /* Warna latar belakang saat hover */
-  }
-
-.logout-narasi p{
-    text-align: center;
-}
-
-.input-box{
-    position: relative;
-    width: 100%;
-    margin-top: 80px;
-    background-color: #FAF9F4;
-    border: #4560A6;
-    border-radius: 10px;
-    padding: 60px;
-}
-
-.input-box label{
-    color: black;
-}
-
-.logout-narasi p{
-    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 30px;
 }
