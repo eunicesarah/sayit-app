@@ -24,10 +24,10 @@
                 <h1 class="judul">Log Out</h1>
                     <p class="logout-narasi">Are you sure you want to log out?</p>
                     <div class="submit-button">
-                    <form action="/?home" method="post">
-                        <button class="btn" type="submit" name="logout">Log Out</button>
-                    </form>
-                    </div>
+                    <!-- session destroy -->
+                    <form action = "/src/backend/validate-logout.php" method = "post">
+                        <button type="submit" class="btn">Log Out</button>
+                    
             </div>
         </section>
         
