@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Oct 03, 2023 at 02:03 PM
+-- Generation Time: Oct 04, 2023 at 02:07 AM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -45,7 +45,7 @@ INSERT INTO `article` (`article_id`, `article_judul`, `article_content`, `articl
 (1, 'Pentingnya Pendidikan Seksual', 'Artikel ini menjelaskan konsep psikologi seksual dan dampaknya pada individu.', '2023-08-20 15:57:00.000000', 'src\\public\\img\\profile.jpg', NULL, 'Psikologi Seksual'),
 (2, 'Seksualitas pada Usia Lanjut\r\n\r\n', 'Artikel ini membahas tentang seksualitas pada usia lanjut dan cara menjaga kesehatan seksual saat tua.', '2023-09-05 15:57:00.000000', 'src\\public\\img\\profile.jpg', NULL, 'Kesehatan Lansia'),
 (3, 'Pendidikan Seksual dalam Keluarga\r\n\r\n', 'Artikel ini mendiskusikan pentingnya pendidikan seksual di dalam lingkungan keluarga dan bagaimana orang tua dapat mengintegrasikannya dalam keseharian.', '2023-09-20 16:03:06.000000', 'src\\public\\img\\profile.jpg', NULL, 'Pendidikan Seksual Umum'),
-(4, 'Keamanan Seksual dalam Hubungan', 'Artikel ini menyoroti isu-isu keamanan seksual dan langkah-langkah untuk menjaga keamanan dalam hubungan intim.', '2023-10-05 16:03:06.000000', '\'src\\\\public\\\\img\\\\profile.jpg\'', NULL, 'Keamanan Seksual'),
+(4, 'Keamanan Seksual dalam Hubungan', 'Artikel ini menyoroti isu-isu keamanan seksual dan langkah-langkah untuk menjaga keamanan dalam hubungan intim.', '2023-10-05 16:03:06.000000', 'src\\public\\img\\profile.jpg', NULL, 'Keamanan Seksual'),
 (5, 'Seksualitas Remaja dan Pendidikan', 'Artikel ini membahas perubahan seksual pada remaja dan pentingnya pendidikan seksual yang sesuai dengan usia mereka.', '2023-10-20 16:03:06.000000', NULL, NULL, 'Pendidikan Remaja'),
 (6, 'Pentingnya Kesehatan Mental Seksual', 'Artikel tentang pentingnya mendukung individu dalam menjaga kesehatan mental terkait dengan aspek-aspek seksualitas.', '2023-11-05 16:03:06.000000', NULL, NULL, 'Kesehatan Mental'),
 (7, 'Kesehatan Reproduksi dan Pendidikan', 'Artikel ini menjelaskan tentang kesehatan reproduksi, kebutuhan pendidikan dalam hal ini, serta bagaimana menjaga kesehatan reproduksi.', '2023-11-20 16:03:06.000000', NULL, NULL, 'Kesehatan Reproduksi'),
@@ -328,7 +328,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('php_docker', '2023-10-03 13:25:55', '{\"Console\\/Mode\":\"collapse\",\"NavigationWidth\":239.977}');
+('php_docker', '2023-10-04 02:07:07', '{\"Console\\/Mode\":\"collapse\",\"NavigationWidth\":239.977}');
 
 -- --------------------------------------------------------
 
