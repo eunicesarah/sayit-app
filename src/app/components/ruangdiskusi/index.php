@@ -2,6 +2,28 @@
     $title = "SayIt";
     $page = "Ruang Diskusi";
 
+    $servername = "db";
+    $username = "php_docker";
+    $password = "password";
+    $dbname = "php_docker";
+
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+    if (!$conn) {
+        die("Koneksi ke database gagal: " . mysqli_connect_error());
+    }
+    $result = mysqli_query($conn, "SELECT * FROM timeline");
+    $jumlahData = mysqli_num_rows($result);
+    $jumlahDataPerHalaman = 3;
+    $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+    $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+    $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+    $query = "SELECT * FROM timeline LIMIT $awalData, $jumlahDataPerHalaman";
+    $timeline = mysqli_query($conn, $query);
+
+    require_once __DIR__ . "/../../models/timelineModel.php";
+   
+    $timelineModel = new timelineModel;
 ?>
 
 <!DOCTYPE html>
@@ -22,83 +44,63 @@
                 <div class="row">
                     <div class="col">
                         <h3 class="judul">Ruang Diskusi</h3>
-                        <div class="diskusi">
-                            <div class="diskusi-box">
-                                <div class="diskusi-header">
-                                    <div class="column">
-                                        <div class="diskusi-user">
-                                            <img class="foto-profil" src="src\public\img\profile.jpg" alt="" width="50px" height="50px">
-                                        </div>
-                                        <div class="diskusi-username">
-                                            <a class="host-username" href="#">Diky</a>
-                                            <p>12 Desember 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="diskusi-title">
-                                        <h4>Apakah pelecehan seksual dapat terjadi di lingkungan sekolah?</h4>
-                                    </div>
-                                </div>
-                                <div class="diskusi-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                </div>
-                                <div class="diskusi-footer">
-                                </div>
-                            </div>
-                            <div class="diskusi-box">
-                                <div class="diskusi-header">
-                                    <div class="column">
-                                        <div class="diskusi-user">
-                                            <img class="foto-profil" src="src\public\img\profile.jpg" alt="" width="50px" height="50px">
-                                        </div>
-                                        <div class="diskusi-username">
-                                            <a class="host-username" href="#">Diky</a>
-                                            <p>12 Desember 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="diskusi-title">
-                                        <h4>Apakah pelecehan seksual dapat terjadi di lingkungan sekolah?</h4>
-                                    </div>
-                                </div>
-                                <div class="diskusi-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                </div>
-                                <div class="diskusi-footer">
-                                </div>
-                            </div>
-                            <div class="diskusi-box">
-                                <div class="diskusi-header">
-                                    <div class="column">
-                                        <div class="diskusi-user">
-                                            <img class="foto-profil" src="src\public\img\profile.jpg" alt="" width="50px" height="50px">
-                                        </div>
-                                        <div class="diskusi-username">
-                                            <a class="host-username" href="#">Diky</a>
-                                            <p>12 Desember 2020</p>
-                                        </div>
-                                    </div>
-                                    <div class="diskusi-title">
-                                        <h4>Apakah pelecehan seksual dapat terjadi di lingkungan sekolah?</h4>
-                                    </div>
-                                </div>
-                                <div class="diskusi-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                </div>
-                                <div class="diskusi-footer">
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            while ($row = mysqli_fetch_assoc($timeline)) {
+                                echo '<div class="diskusi-box">';
+                                echo '<div class="diskusi-header">';
+                                echo '<div class="column">';
+                                echo '<div class="diskusi-username">';
+                                echo '<a class="host-username" href="#">'. htmlspecialchars($timelineModel->getUserName($row['user_id'])).'</a>';
+                                echo '<p>'.$row["timeline_date"].'</p>';
+                                echo '<img src="'. $row['timeline_path'] . '">';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '<div class="diskusi-body">';
+                                echo '<p>'.$row["timeline_content"].'</p>';
+                                echo '</div>';
+                                echo '<div class="diskusi-footer">';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                        ?>
+
                     </div>
                 </div>
         </section>
+    
+        
+        <div id="overlay" class="overlay">
+            <div class="form-diskusi"></div>
+            <div class="diskusi-box">
+                <form action="/src/backend/validate-ruangdiskusi.php" class="form" method="post">
+                <div class="closeOverlayButton" id="closeOverlayButton" onclick="showOverlay()">&times;</div>
+                <div class="diskusi-header">
+                        <div class="diskusi-username">
+                            <a class="host-username" href="#">Tulis Diskusi</a>
+                        </div>
+                    <div class="input-box">
+                        <textarea id="long-text" name="timeline_content" rows="4" cols="50"
+                        placeholder="Tulis diskusi anda..." required></textarea>
+                    </div>
+                    
+                    <div class="diskusi-footer">
+                        <label for="bukti">Add Media</label>
+                            <br class="spasi">
+                            <input type="file" placeholder="Upload media" name="timeline_path">
+                            <br>
+                            <form action="/?home" method="post">
+                                <button class="btn" type="submit">Submit</button>
+                            </form>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <button class="showOverlayButton" id="showOverlayButton" onclick="showOverlay()">Tambah Diskusi</button>
+
+
         <footer class="footer">
             <div class="footer-container">
                 <div class="row">
@@ -118,5 +120,7 @@
                 </div>
             </div>
         </footer>
+        
+        <script src="/src/public/js/ruangdiskusi.js"></script>
     </body>
 </html>
