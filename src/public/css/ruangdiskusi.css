@@ -267,7 +267,7 @@ section{
     margin-top: 0.5rem;
     border: 1px solid #4560A6;
     border-radius: 0.4rem;
-    padding: 0 1;
+    padding: 5px;
 }
 
 .column .diskusi-username{
@@ -307,7 +307,36 @@ textarea{
     position: relative;
 }
 
-.btn{
+.showOverlayButton {
+    position: fixed;
+    width: auto;
+    height: 40px;
+    background-color: #F3AA98;
+    bottom: 35px;
+    right: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    background: #F3AA98;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+    padding: 10px;
+  }
+  
+
+  .showOverlayButton:hover {
+    background: #FD6B39;
+    color: #FAF9F4;
+    transition: .5s;
+  }
+
+  .btn{
     position: relative;
     padding: 10px 30px;
     margin-top: 30px;
@@ -326,3 +355,87 @@ textarea{
 .btn:hover {
     background-color: #FD6B39; /* Warna latar belakang saat hover */
   }
+
+.input-box{
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.input-box label{
+    color: black;
+}
+
+.input-box input{
+    position: relative;
+    height: 3rem;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #4560A6;
+    margin-top: 0.5rem;
+    border: 1px solid #4560A6;
+    border-radius: 0.4rem;
+    padding: 5px 5px;
+}
+
+.diskusi-footer{
+    text-align: center;
+}
+
+.overlay .form-diskusi{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: #FAF9F4;
+    z-index: 20;
+    display: none;
+}
+
+.overlay .diskusi-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #FAF9F4;
+    width: 800px;
+    height: 400px;
+    z-index: 20;
+    text-align: center;
+    border-radius: 6px;
+    box-sizing: 20px;
+    padding: 20px;
+}
+
+.overlay .closeOverlayButton{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #FD6B39;
+    color: #FAF9F4;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.overlay .closeOverlayButton:hover{
+    background: #FAF9F4;
+    color: #FD6B39;
+    transition: .5s;
+}
+
+.overlay .active .form-diskusi{
+    display: block;
+}
+
+.overlay.active .diskusi-box{
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 300ms ease-in-out;
+}

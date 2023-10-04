@@ -231,3 +231,11 @@ section{
 .search-bar::placeholder {
     color: #fff; 
 }
+
+.pagination {
+
+    position: relative;
+    justify-content: center;
+    margin-top: 400px;
+    padding-top: 200px;
+}

@@ -2,14 +2,14 @@
 
     $title = "SayIt";
     $page = "Artikel";
-
-
+    // require __DIR__ .'/../../../backend/query.php';
+ 
     $servername = "db";
     $username = "php_docker";
     $password = "password";
     $dbname = "php_docker"; 
     
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
     // $conn = mysqli_connect(
     //     $hostname = ini_get("mysqli.default_host"),
     //     $username = ini_get("mysqli.default_user"),
@@ -21,10 +21,18 @@
     if (!$conn) {
         die("Koneksi ke database gagal: " . mysqli_connect_error());
     }
+    $result = mysqli_query($conn, "SELECT * FROM article");
+    $jumlahData = mysqli_num_rows($result);
+    $jumlahDataPerHalaman = 3;
+    $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+    $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+    $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+    $query = "SELECT * FROM article LIMIT $awalData, $jumlahDataPerHalaman";
+    $article = mysqli_query($conn, $query);
 
-    $query = "SELECT * FROM article";
-    $result = mysqli_query($conn, $query);
 
+    // $query = "SELECT * FROM article";
+    // $result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -46,10 +54,11 @@
 
     <section class="container">
         <input type="text" class="search-bar" placeholder="Cari artikel...">
+
         <div class="article-container">
             <?php
 
-                while ($row = mysqli_fetch_assoc($result)) {
+                    while($row = mysqli_fetch_assoc($article)) {
                     echo '<div class="article">';
                     echo '<a >';
                     echo '<img src="' . $row['article_image'] .  '">';
@@ -62,6 +71,16 @@
 
                 }
             ?>
+        </div>
+        <div class ="pagination">
+        <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+            <?php if ($i == $halamanAktif) : ?>
+                <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
+            <?php else : ?>
+                <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+            <?php endif; ?>
+        <?php endfor; ?>
+
         </div>
     </section>
         </section>
