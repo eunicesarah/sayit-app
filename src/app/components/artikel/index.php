@@ -2,7 +2,6 @@
 
     $title = "SayIt";
     $page = "Artikel";
-    // require __DIR__ .'/../../../backend/query.php';
  
     $servername = "db";
     $username = "php_docker";
@@ -10,14 +9,7 @@
     $dbname = "php_docker"; 
     
     $conn = mysqli_connect($servername, $username, $password, $dbname);
-    // $conn = mysqli_connect(
-    //     $hostname = ini_get("mysqli.default_host"),
-    //     $username = ini_get("mysqli.default_user"),
-    //     $password = ini_get("mysqli.default_pw"),
-    //     $database = "",
-    //     $port = ini_get("mysqli.default_port"),
-    //     $socket = ini_get("mysqli.default_socket")
-    // );
+
     if (!$conn) {
         die("Koneksi ke database gagal: " . mysqli_connect_error());
     }
@@ -27,12 +19,8 @@
     $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
     $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
     $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-    $query = "SELECT * FROM article LIMIT $awalData, $jumlahDataPerHalaman";
+    $query = "SELECT * FROM article  LIMIT $awalData, $jumlahDataPerHalaman   ";
     $article = mysqli_query($conn, $query);
-
-
-    // $query = "SELECT * FROM article";
-    // $result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -49,11 +37,16 @@
 
 
 <body>
-    <!-- Navbar -->
+
     <?php include (dirname(__DIR__)) . "/navbar/index.php" ?>
 
     <section class="container">
-        <input type="text" class="search-bar" placeholder="Cari artikel...">
+        <input type="text" class="search-bar" id="search" placeholder="Cari artikel...">
+
+        <div id="search-results" class="article-container">
+
+
+        </div>
 
         <div class="article-container">
             <?php
@@ -72,14 +65,24 @@
                 }
             ?>
         </div>
-        <div class ="pagination">
-        <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
-            <?php if ($i == $halamanAktif) : ?>
-                <a href="?halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
+        <div class ="pagination-nav">
+        <?php if($halamanAktif > 1) : ?>
+            <a href="?artikel/index.php&halaman=<?= $halamanAktif - 1; ?>">&laquo;</a>
+        <?php endif; ?>
+
+        <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+            <?php if($i == $halamanAktif) : ?>
+                <a href="?artikel/index.php&halaman=<?= $i; ?>" style="font-weight: bold; color: red;"><?= $i; ?></a>
             <?php else : ?>
-                <a href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+                <a href="?artikel/index.php&halaman=<?= $i; ?>"><?= $i; ?></a>
             <?php endif; ?>
         <?php endfor; ?>
+
+        <?php if($halamanAktif < $jumlahHalaman) : ?>
+            <a href="?artikel/index.php&halaman=<?= $halamanAktif + 1; ?>">&raquo;</a>
+        <?php endif; ?>
+
+                
 
         </div>
     </section>
@@ -103,10 +106,11 @@
                 </div>
             </div>
         </footer>
+        <script src="src/public/js/artikel.js"></script>
     </body>
 </html>
 
 <?php
-    // 4. Menutup koneksi ke database
+
     mysqli_close($conn);
 ?>
