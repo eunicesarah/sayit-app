@@ -86,24 +86,5 @@
             <button type="submit" class="savebtn" name="save">Save</button>
             </form>
         </section>
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="row">
-                    <div class="footer-col">
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4></h4>
-                        <ul>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Our Partner</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </body>    
 </html>

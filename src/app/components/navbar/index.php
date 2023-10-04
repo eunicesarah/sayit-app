@@ -1,3 +1,17 @@
+<?php
+
+    $servername = "db";
+    $username = "php_docker";
+    $password = "password";
+    $dbname = "php_docker";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+    if (session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+    
+?>
+
 <nav class="navbar">
     <input type="checkbox" id="nav-check">
     <label for="nav-check" class="check-button">
@@ -8,9 +22,35 @@
         <li <?php if($page == "Home") echo "class='active'"; ?>><a href="/?home">Home</a></li>
         <li <?php if($page == "Artikel") echo "class='active'"; ?>><a href="/?artikel">Artikel</a></li>
         <li <?php if($page == "Ruang Diskusi") echo "class='active'"; ?>><a href="/?ruangdiskusi">Ruang Diskusi</a></li>
-        <li <?php if($page == "Lapor") echo "class='active'"; ?>><a href="/?lapor">Lapor</a></li>
-        <!-- <li <?php if($page == "SignUp" AND !isset($_SESSION["user_email"])) echo "class='active'"; ?>><a href="/?signup">Sign Up</a></li> -->
-        <!-- <li <?php if($page == "LogOut" AND isset($_SESSION["user_email"])) echo "class='active'"; ?>><a href="/?logout">Log Out</a></li> -->
+        <?php
+        if (isset($_SESSION["user_id"])) {
+            $roles = mysqli_query($conn, "SELECT roles FROM user WHERE user_id = '".$_SESSION["user_id"]."'");
+            $roles = mysqli_fetch_assoc($roles);
+            if ((int)$roles == 1) {
+                echo "<script> console.log('admin')</script>";
+                echo "<li";
+                if ($page == 'adminLapor') {
+                    echo " class='active'";
+                }
+                echo "><a href='/?admin'>Lapor</a></li>";
+            }
+            else{
+                echo "<li";
+                if ($page == 'Lapor') {
+                    echo " class='active'";
+                }
+                echo "><a href='/?lapor'>Lapor</a></li>";
+            }
+        }
+        else{
+            echo "<li";
+                if ($page == 'Lapor') {
+                    echo " class='active'";
+                }
+                echo "><a href='/?lapor'>Lapor</a></li>";
+        }
+        ?>
+        <!-- <li <?php if($page == "Lapor") echo "class='active'"; ?>><a href="/?lapor">Lapor</a></li> -->
         <?php
         if (isset($_SESSION["user_id"])) {
             echo "<li";

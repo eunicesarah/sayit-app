@@ -160,6 +160,13 @@ section{
     margin-bottom: 200px;
 }
 
+.footer-container{
+    background: #4560A6;
+    padding: 3em;
+    grid-column: 1 / -1;
+    margin-top: auto;
+}
+
 .styletable {
     border-collapse: collapse;
     margin: 25px 0;
