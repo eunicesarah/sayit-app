@@ -24,15 +24,19 @@
         <li <?php if($page == "Ruang Diskusi") echo "class='active'"; ?>><a href="/?ruangdiskusi">Ruang Diskusi</a></li>
         <?php
         if (isset($_SESSION["user_id"])) {
-            $roles = mysqli_query($conn, "SELECT roles FROM user WHERE user_id = '".$_SESSION["user_id"]."'");
-            $roles = mysqli_fetch_assoc($roles);
-            if ((int)$roles == 1) {
+            $row = mysqli_query($conn, "SELECT roles FROM user WHERE user_id = '".$_SESSION["user_id"]."'");
+            // $roles = mysqli_fetch_assoc($roles);
+            $row = mysqli_fetch_assoc($row);
+            // echo "<script> console.log('lalala " . json_encode($row) . "' );</script>";
+            if ($row['roles'] === "admin") {
+                
                 echo "<script> console.log('admin')</script>";
                 echo "<li";
                 if ($page == 'adminLapor') {
                     echo " class='active'";
                 }
                 echo "><a href='/?admin'>Lapor</a></li>";
+                
             }
             else{
                 echo "<li";
