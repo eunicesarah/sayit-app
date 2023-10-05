@@ -13,6 +13,7 @@ $page = "Lapor";
     <meta charset="UTF-8">
     <title>SayIt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/src/public/img/gimmick.png" type="image/x-icon">
     <link rel="stylesheet" href="/src/public/css/lapor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
