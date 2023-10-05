@@ -231,3 +231,67 @@ section{
     font-weight: bold;
     margin-top: 20px;
 }
+
+#search {
+    padding: 8px;
+    border: 1px solid #F3AA98;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+    font-size: 16px;
+}
+
+/* Styling for the filter and sort buttons */
+
+button[name="sortBy"],
+select[name="category"],
+select[name="status"] {
+    background-color: #F3AA98;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button:hover{
+    background-color: #4560A6;
+    color: #fff;
+    transition: .5s;
+}
+
+/* Styling for the default option in select elements */
+select option[value=""] {
+    color: #666; /* Placeholder color */
+}
+
+select {
+    background-color: #f3f3f3; /* Default background color */
+    border: 1px solid #f3f3f3; /* Default border color */
+    color: #333; /* Default text color */
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  select option {
+    background-color: #fff; /* Default background color */
+    color: #333; /* Default text color */
+  }
+  
+select:hover {
+    background-color: #4560A6; /* Hover background color */
+    border-color: #F3AA98; /* Hover border color */
+    color: #fff; /* Hover text color */
+  }
+
+  select option:hover {
+    background-color: #4560A6; /* Hover background color */
+    color: #fff; /* Hover text color */
+  }
+.search-container{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

@@ -43,9 +43,25 @@ $result = mysqli_query($conn, $query);
     <?php include(dirname(__DIR__)) . "/navbar/index.php" ?>
 
     <section class="container">
-                     <input type="text" id="search" placeholder="Search...">
-            <div id="search-results"></div>
-        
+    <div class="search-container">
+            <input type="text" id="search" placeholder="Search...">
+            <button id="sort-date" name="sortBy">Sort by Date</button>
+            <button id="sort-alphabet" name="sortBy">Sort Alphabetically</button>
+            <select id="filter-category" name="category">
+                <option value="">Filter by Category</option>
+                <option value="Saksi">Saksi</option>
+                <option value="Korban">Korban</option>
+                <!-- Add more categories as needed -->
+            </select>
+            <select id="filter-status" name="status">
+                <option value="">Filter by Status</option>
+                <option value="pending">Pending</option>
+                <option value="in_progress">In Progress</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+        <div id="search-results"></div>
+
 
         <table class="styletable" id="tableBody">
             <thead>

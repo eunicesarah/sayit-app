@@ -3,6 +3,68 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search");
     const searchResults = document.getElementById("search-results");
     const styletable = document.querySelector(".styletable tbody");
+    const sortDateButton = document.getElementById("sort-date");
+    const sortAlphabetButton = document.getElementById("sort-alphabet");
+    const filterCategorySelect = document.getElementById("filter-category");
+    const filterStatusSelect = document.getElementById("filter-status");
+
+    // Add event listeners for filter and sort
+    filterCategorySelect.addEventListener("change", function () {
+        const selectedCategory = filterCategorySelect.value;
+        const selectedStatus = filterStatusSelect.value;
+        fetchFilteredData(selectedCategory, selectedStatus);
+    });
+
+    filterStatusSelect.addEventListener("change", function () {
+        const selectedCategory = filterCategorySelect.value;
+        const selectedStatus = filterStatusSelect.value;
+        fetchFilteredData(selectedCategory, selectedStatus);
+    });
+
+    sortDateButton.addEventListener("click", function () {
+        fetchSortedData("date");
+    });
+
+    sortAlphabetButton.addEventListener("click", function () {
+        fetchSortedData("alphabet");
+    });
+
+    function fetchFilteredData(category, status) {
+        showLoader();
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", `/src/backend/search.php?q=${searchInput.value}&category=${category}&status=${status}`, true);
+
+        xhr.onreadystatechange = function () {
+            console.log("ready state", xhr.readyState);
+            console.log("ready status", xhr.status);
+            console.log(xhr.responseText);
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const filteredResults = JSON.parse(xhr.responseText);
+                populateTable(filteredResults);
+            }
+        };
+
+        xhr.send();
+    }
+
+    function fetchSortedData(sortBy) {
+        showLoader();
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", `/src/backend/search.php?q=${searchInput.value}&sort=${sortBy}`, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const sortedResults = JSON.parse(xhr.responseText);
+                // console.log(xhr.responseText);
+                populateTable(sortedResults);
+            }
+        };
+
+        xhr.send();
+    }
+    
 
     searchInput.addEventListener("input", debounce(function () {
         const searchQuery = searchInput.value.trim();
@@ -20,8 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log("ini" + xhr.responseText);
+                // console.log("ini" + xhr.responseText);
                 const results = JSON.parse(xhr.responseText);
+                // const filteredResults = JSON.parse(xhr.responseText);
+                // const sortedResults = JSON.parse(xhr.responseText);
+
                 if (results.length > 0) {
                     populateTable(results);
                 } else {
