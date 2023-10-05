@@ -59,25 +59,26 @@ $page = "SignUp";
         </form>
         </div>
     </section>
+    
+    <div class="name-overlay">
+    </div>
+
     <footer class="footer">
             <div class="footer-container">
                 <div class="row">
                     <div class="footer-col">
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <img src="/src/public/img/gimmick.png" alt="logo" class="logofooter">
+                            <li><a class="footer-content">SayIt adalah platform yang mewadahi pendidikan seks dan pelaporan pelecehan seksual</a></li>
+                            <li><a class="footer-content">Contact Us</a></li>
                         </ul>
                     </div>
-                    <div class="footer-col">
-                        <h4></h4>
-                        <ul>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Our Partner</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </footer>
+
+    <script src="/src/public/js/signup.js"></script>
 </body>
 
 </html>

@@ -7,22 +7,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate name
     if (empty($_POST['name'])) {
         $errors[] = 'Please enter your name';
-        echo "nama";
+        echo "<script>alert('Please enter your name!')</script>";
+        echo "<script>window.location.href='/?signup';</script>";
     }
 
     // Validate email
     if (empty($_POST['email'])) {
         $errors[] = 'Please enter your email';
-        echo "email";
-    } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Please enter your email!')</script>";
+        echo "<script>window.location.href='/?signup';</script>";
+    } 
+    elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Invalid email format';
-        echo "email";
+        echo "<script>alert('Please enter a valid email!')</script>";
+        echo "<script>window.location.href='/?signup';</script>";
     }
 
     // Validate phone number
     if (empty($_POST['phone'])) {
         $errors[] = 'Please enter your phone number';
-        echo "phone";
+        echo "<script>alert('Please enter your phone number!')</script>";
+        echo "<script>window.location.href='/?signup';</script>";
     } 
     // elseif (!preg_match('^\(\+62|62|0)8[1-9][0-9]{6,9}$^', $_POST['phone'])){
     //     $errors[] = 'Invalid phone number format';
@@ -41,10 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate password
     if (empty($_POST['password'])) {
         $errors[] = 'Please enter your password';
-        echo "password";
+        echo "<script>alert('Please enter your password!')</script>";
+        echo "<script>window.location.href='/?signup';</script>";
     } elseif (strlen($_POST['password']) < 8) {
         $errors[] = 'Password must be at least 8 characters long';
-        echo "password";
+        echo "<script>alert('Please enter your password!')</script>";
+        echo "<script>window.location.href='/?signup';</script>";
     }
 
     if (empty($errors)) {
@@ -61,7 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->bind_param('ssssii', $_POST["name"], $_POST["email"], $password_hash, $_POST["gender"], $_POST["phone"], $role);
 
             if ($stmt->execute()) {
-                echo "User registered successfully.";
+                echo "<script>alert('Register success!')</script>";
+                echo "<script>window.location.href='/?home';</script>";
             } else {
                 echo $mysqli->error;
             }

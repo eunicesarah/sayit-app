@@ -6,7 +6,7 @@ require_once __DIR__ . "/../app/models/laporModel.php";
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     // echo "masuk";x
     $errors = array();
-    if(empty($_POST['pe                                                       '])){
+    if(empty($_POST['pelapor'])){
         $errors[] = 'Please enter your name';
     }
     if(empty($_POST['lokasi'])){
