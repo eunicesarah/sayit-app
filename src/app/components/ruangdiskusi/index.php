@@ -53,7 +53,29 @@
                                 echo '<div class="diskusi-username">';
                                 echo '<a class="host-username" href="#">'. htmlspecialchars($timelineModel->getUserName($row['user_id'])).'</a>';
                                 echo '<p>'.$row["timeline_date"].'</p>';
-                                echo '<img src="data:image/jpeg;base64,'. base64_encode($row['timeline_path']) . '">'; // Menampilkan gambar BLOB
+                                // echo '<img src="data:image/jpeg;base64,'. base64_encode($row['timeline_path']) . '">'; // Menampilkan gambar BLOB
+                                // echo '<img src="/src/public/media/'. ($row['timeline_path']) . '">';
+                                // echo '<video width="320" height="240" controls>';
+                                // echo '<source src="/src/public/media/'. ($row['timeline_path']) . '" type="video/mp4">';
+                                // echo '</video>';
+                                if ($row['timeline_path']) {
+                                    $media_path = "/src/public/media/" . $row['timeline_path'];
+                                    $file_extension = pathinfo($media_path, PATHINFO_EXTENSION);
+                                
+                                    if (in_array($file_extension, ['jpg', 'jpeg', 'png', 'gif'])) {
+                                        // Tampilkan gambar jika ekstensi file adalah gambar
+                                        echo '<img src="' . $media_path . '">';
+                                    } elseif ($file_extension == 'mp4') {
+                                        // Tampilkan video jika ekstensi file adalah mp4
+                                        echo '<video width="320" height="240" controls>';
+                                        echo '<source src="' . $media_path . '" type="video/mp4">';
+                                        echo '</video>';
+                                    } else {
+                                        // Tampilkan pesan jika jenis media tidak dikenali
+                                        echo 'Jenis media tidak didukung';
+                                    }
+                                }
+                                echo "<script> console.log('lalala " . $row['timeline_path'] . "' );</script>";
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</div>';

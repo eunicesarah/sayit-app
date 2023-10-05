@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Oct 04, 2023 at 02:07 AM
+-- Generation Time: Oct 05, 2023 at 04:18 PM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -77,6 +77,18 @@ CREATE TABLE `lapor` (
   `lapor_status` varchar(20) NOT NULL,
   `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `lapor`
+--
+
+INSERT INTO `lapor` (`lapor_id`, `lapor_jenis`, `lapor_nama`, `lapor_lokasi`, `lapor_tanggal`, `lapor_waktu`, `lapor_kronologi`, `lapor_bukti`, `lapor_status`, `user_id`) VALUES
+(1, 'Saksi', 'Syauqi', 'ITB', '2023-10-02', '17:44:00.0000', 'blablabla', '', 'pending', 3),
+(2, 'Saksi', 'Syauqi', 'Unpad', '2023-10-03', '17:50:00.0000', 'hahahahihihi', '', 'pending', 3),
+(3, 'Saksi', 'Uki', 'Jl Sayang', '2023-10-01', '18:52:00.0000', 'auooo', '', 'pending', 3),
+(4, 'Saksi', 'agso', 'Unpad', '2023-10-04', '13:55:00.0000', 'hahaha', '', 'pending', 3),
+(5, 'Korban', 'jojo', 'Unpad', '2023-10-02', '15:58:00.0000', 'jjjjjj', '', 'pending', 3),
+(6, 'Saksi', 'Uki', 'ITB', '2023-10-04', '17:00:00.0000', 'acsdsadaadas', '', 'pending', 3);
 
 -- --------------------------------------------------------
 
@@ -221,7 +233,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('php_docker', '[{\"db\":\"php_docker\",\"table\":\"article\"},{\"db\":\"php_docker\",\"table\":\"user\"},{\"db\":\"php_docker\",\"table\":\"lapor\"},{\"db\":\"php_docker\",\"table\":\"timeline\"}]');
+('php_docker', '[{\"db\":\"php_docker\",\"table\":\"timeline\"},{\"db\":\"php_docker\",\"table\":\"lapor\"},{\"db\":\"php_docker\",\"table\":\"article\"},{\"db\":\"php_docker\",\"table\":\"user\"}]');
 
 -- --------------------------------------------------------
 
@@ -292,6 +304,13 @@ CREATE TABLE `pma__table_uiprefs` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Tables'' UI preferences';
 
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('php_docker', 'php_docker', 'timeline', '[]', '2023-10-05 15:31:46');
+
 -- --------------------------------------------------------
 
 --
@@ -328,7 +347,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('php_docker', '2023-10-04 02:07:07', '{\"Console\\/Mode\":\"collapse\",\"NavigationWidth\":239.977}');
+('php_docker', '2023-10-05 16:11:55', '{\"Console\\/Mode\":\"collapse\",\"NavigationWidth\":239.977}');
 
 -- --------------------------------------------------------
 
@@ -363,9 +382,17 @@ CREATE TABLE `timeline` (
   `user_id` int NOT NULL,
   `timeline_id` int NOT NULL,
   `timeline_content` longtext NOT NULL,
-  `timeline_date` datetime(6) NOT NULL,
-  `timeline_path` int DEFAULT NULL
+  `timeline_date` date NOT NULL,
+  `timeline_path` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `timeline`
+--
+
+INSERT INTO `timeline` (`user_id`, `timeline_id`, `timeline_content`, `timeline_date`, `timeline_path`) VALUES
+(1, 16, 'halo ini v', '2023-10-05', 'MD-651ee070c33d48.96464154.mp4'),
+(1, 17, 'halo ini say it', '2023-10-05', 'MD-651ee081c464c5.49218945.png');
 
 -- --------------------------------------------------------
 
@@ -389,7 +416,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_pass`, `user_gender`, `user_phone`, `roles`) VALUES
 (1, 'Salman H', 'salman@admin.com', 'admin123', 'Male', 87777876, 'admin'),
-(2, 'Athallia', 'athallia@admin.com', 'admin123', 'Female', 812732123, 'admin');
+(2, 'Athallia', 'athallia@admin.com', 'admin123', 'Female', 812732123, 'admin'),
+(3, 'Syauqi', 'syauqi@gmail.com', 'syauqi123', 'Male', 68326291, '0'),
+(4, 'Nana', 'nana@ymail.com', 'nanana123', 'Female', 813147, '0');
 
 --
 -- Indexes for dumped tables
@@ -557,7 +586,7 @@ ALTER TABLE `article`
 -- AUTO_INCREMENT for table `lapor`
 --
 ALTER TABLE `lapor`
-  MODIFY `lapor_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `lapor_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pma__bookmark`
@@ -599,13 +628,13 @@ ALTER TABLE `pma__savedsearches`
 -- AUTO_INCREMENT for table `timeline`
 --
 ALTER TABLE `timeline`
-  MODIFY `timeline_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `timeline_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
