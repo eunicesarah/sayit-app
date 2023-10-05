@@ -413,11 +413,11 @@ textarea{
 
 .overlay .diskusi-box{
     position: absolute;
-    top: 50%;
+    top: 400px;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     background-color: #FAF9F4;
-    width: 800px;
+    width: calc(100% - 90px);
     height: 400px;
     z-index: 20;
     text-align: center;
