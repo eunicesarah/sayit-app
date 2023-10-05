@@ -40,7 +40,7 @@ class laporModel extends Database{
 
             if ($stmt->execute()) {
                 //direct to home
-                header('Location: /?home');
+                // header('Location: /?home');
             } else {
                 echo $mysqli->error;
             }
