@@ -50,7 +50,6 @@
                 echo "><a href='/?lapor'>Lapor</a></li>";
         }
         ?>
-        <!-- <li <?php if($page == "Lapor") echo "class='active'"; ?>><a href="/?lapor">Lapor</a></li> -->
         <?php
         if (isset($_SESSION["user_id"])) {
             echo "<li";
@@ -63,7 +62,6 @@
                     echo " class='active'";
                 }
                 echo "><a href='/?logout'>Log Out</a></li>";
-                echo "<script> console.log('masuk')</script>";
         }
         else{
             echo "<li";

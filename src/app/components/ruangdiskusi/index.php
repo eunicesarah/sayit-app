@@ -12,13 +12,13 @@
     if (!$conn) {
         die("Koneksi ke database gagal: " . mysqli_connect_error());
     }
-    $result = mysqli_query($conn, "SELECT * FROM timeline");
-    $jumlahData = mysqli_num_rows($result);
-    $jumlahDataPerHalaman = 3;
-    $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
-    $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
-    $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-    $query = "SELECT * FROM timeline LIMIT $awalData, $jumlahDataPerHalaman";
+    // $result = mysqli_query($conn, "SELECT * FROM timeline");
+    // $jumlahData = mysqli_num_rows($result);
+    // $jumlahDataPerHalaman = 3;
+    // $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+    // $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+    // $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+    $query = "SELECT * FROM timeline ";
     $timeline = mysqli_query($conn, $query);
 
     require_once __DIR__ . "/../../models/timelineModel.php";
@@ -52,7 +52,7 @@
                                 echo '<div class="diskusi-username">';
                                 echo '<a class="host-username" href="#">'. htmlspecialchars($timelineModel->getUserName($row['user_id'])).'</a>';
                                 echo '<p>'.$row["timeline_date"].'</p>';
-                                echo '<img src="'. $row['timeline_path'] . '">';
+                                echo '<img src="data:image/jpeg;base64,'. base64_encode($row['timeline_path']) . '">'; // Menampilkan gambar BLOB
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</div>';
@@ -63,6 +63,8 @@
                                 echo '</div>';
                                 echo '</div>';
                             }
+                            
+                        
                         ?>
 
                     </div>
@@ -73,7 +75,7 @@
         <div id="overlay" class="overlay">
             <div class="form-diskusi"></div>
             <div class="diskusi-box">
-                <form action="/src/backend/validate-ruangdiskusi.php" class="form" method="post">
+                <form action="/src/backend/validate-ruangdiskusi.php" class="form" method="post" enctype="multipart/form-data">
                 <div class="closeOverlayButton" id="closeOverlayButton" onclick="showOverlay()">&times;</div>
                 <div class="diskusi-header">
                         <div class="diskusi-username">
@@ -87,7 +89,7 @@
                     <div class="diskusi-footer">
                         <label for="bukti">Add Media</label>
                             <br class="spasi">
-                            <input type="file" placeholder="Upload media" name="timeline_path">
+                            <input type="file" placeholder="Upload media" name="image_file">
                             <br>
                             <form action="/?home" method="post">
                                 <button class="btn" type="submit">Submit</button>
