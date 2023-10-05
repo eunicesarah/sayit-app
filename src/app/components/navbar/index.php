@@ -46,13 +46,6 @@
                 echo "><a href='/?lapor'>Lapor</a></li>";
             }
         }
-        else{
-            echo "<li";
-                if ($page == 'Lapor') {
-                    echo " class='active'";
-                }
-                echo "><a href='/?lapor'>Lapor</a></li>";
-        }
         ?>
         <?php
         if (isset($_SESSION["user_id"])) {
