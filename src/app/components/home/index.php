@@ -77,7 +77,7 @@
                         <p>Isi berita singkat untuk Hot News 3.</p>
                     </div>
                 </div>
-                <button onclick="window.location.href='artikel.php'" class="more-articles-button">More Articles</button>
+                <button onclick="window.location.href='/?artikel'" class="more-articles-button">More Articles</button>
             </div>
             
         </section>
