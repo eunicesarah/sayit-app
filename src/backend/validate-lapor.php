@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         $addLaporan = new laporModel;
         // echo isset($_SESSION["user_id"]);
         $addLaporan->addLaporan($_SESSION["user_id"], $_POST['jenis'], $_POST['pelapor'], $_POST['lokasi'], $_POST['tanggal'], $_POST['waktu_kejadian'], $_POST['kronologi'], $_POST['bukti'], "pending");
-    }
+        echo "<script>alert('Laporan telah ditambahkan!')</script>";
+    }   
 }
 ?>
