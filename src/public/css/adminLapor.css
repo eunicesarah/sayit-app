@@ -307,3 +307,15 @@ vide{
     height: auto;
     margin-top: 20px;
 }
+
+.delete-button{
+    background-color: #FD6B39;
+    color: #FAF9F4;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}

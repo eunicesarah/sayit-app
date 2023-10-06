@@ -74,6 +74,7 @@ $result = mysqli_query($conn, $query);
                     <th>Kronologi</th>
                     <th>Bukti</th>
                     <th>Status</th>
+                    <th>Aksi</th>
                 </tr>
                 <form for="save" action="/src/backend/save-lapor.php" method="post">
 
@@ -111,6 +112,10 @@ $result = mysqli_query($conn, $query);
                         echo "<option value='completed' " . ($row["lapor_status"] == 'completed' ? 'selected' : '') . ">Completed</option>";
                         echo "</select>";
                         echo "</td>";
+                        echo "<td>";
+                        echo "<input type='hidden' name='lapor_id' value='" . $row['lapor_id'] . "'>";
+                        echo "<button type='submit' class='delete-button' name='delete'>Delete</button>";
+                        echo "</td>";
                         echo "</tr>";
                     }
                 } else {
@@ -121,7 +126,7 @@ $result = mysqli_query($conn, $query);
                 </tbdody>
 
         </table>
-        <button type="submit" class="savebtn" name="save">Save</button>
+        <button type="submit" class="savebtn" name="save" href='/?admin'>Save</button>
         </form>
     </section>
 
