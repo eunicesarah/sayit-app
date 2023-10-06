@@ -56,7 +56,7 @@ $article = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_assoc($article)) {
                 echo '<div class="article">';
                 echo '<a >';
-                echo '<img src="' . $row['article_image'] . '">';
+                echo '<img src="' . $row['article_image'] . '" alt="Gambar'. $row['article_judul'] . '">';
                 echo '<div class="article-title">' . $row['article_judul'] . '</div>';
                 echo '<div class="article-date">' . $row['article_date'] . '</div>';
                 echo '<div class="article-description">' . $row['article_content'] . '</div>';

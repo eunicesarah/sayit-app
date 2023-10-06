@@ -56,13 +56,13 @@ nav ul{
     margin-right: 20px;
 }
 
-nav ul li{
+li {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
 
-nav ul li a{
+li a{
     color: #F3AA98;
     font-weight: bold;
     font-size: 17px;
@@ -329,23 +329,25 @@ textarea{
     position: fixed;
     width: auto;
     height: 40px;
-    background-color: #F3AA98;
+    background-color: #FD6B39;
     bottom: 35px;
     right: 35px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
-    background: #F3AA98;
+    background: #FD6B39;
     font-size: 1rem;
     text-decoration: none;
     overflow: hidden;
     transition: .5s;
-    letter-spacing: 4px;
     border-radius: 6px;
     border: none;
     text-align: center;
     padding: 10px;
-  }
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #FAF9F4;
+}
   
 
   .showOverlayButton:hover {

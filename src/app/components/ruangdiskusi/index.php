@@ -34,7 +34,7 @@ $timelineModel = new timelineModel;
     <meta charset="UTF-8">
     <title>SayIt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/src/public/img/gimmick.png" type="image/x-icon">
+    <link rel="icon" href="/src/public/img/gimmick.png" type="image/x-icon" alt="icon">
     <link rel="stylesheet" href="/src/public/css/ruangdiskusi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -57,12 +57,6 @@ $timelineModel = new timelineModel;
 
                     echo '<a class="host-username" href="#">' . htmlspecialchars($timelineModel->getUserName($row['user_id'])) . '</a>';
                     echo '<p>' . $row["timeline_date"] . '</p>';
-                    // echo '<img src="data:image/jpeg;base64,'. base64_encode($row['timeline_path']) . '">'; // Menampilkan gambar BLOB
-                    // echo '<img src="/src/public/media/'. ($row['timeline_path']) . '">';
-                    // echo '<video width="320" height="240" controls>';
-                    // echo '<source src="/src/public/media/'. ($row['timeline_path']) . '" type="video/mp4">';
-                    // echo '</video>';
-                    // echo '<script>console.log("haaha" . $_SESSION["roles"])</script>';
                    
                     if ($row['timeline_path']) {
                         $media_path = "/src/public/media/" . $row['timeline_path'];
@@ -70,11 +64,12 @@ $timelineModel = new timelineModel;
 
                         if (in_array($file_extension, ['jpg', 'jpeg', 'png', 'gif'])) {
                             // Tampilkan gambar jika ekstensi file adalah gambar
-                            echo '<img src="' . $media_path . '">';
+                            echo '<img src="' . $media_path . '" alt="Gambar' . $row['timeline_path'] . '">';
                         } elseif ($file_extension == 'mp4') {
                             // Tampilkan video jika ekstensi file adalah mp4
                             echo '<video width="320" height="240" controls>';
                             echo '<source src="' . $media_path . '" type="video/mp4">';
+                            echo '<track kind="captions" src="captions.vtt" srclang="en" label="English Captions">';
                             echo '</video>';
                         } else {
                             // Tampilkan pesan jika jenis media tidak dikenali
@@ -138,7 +133,7 @@ $timelineModel = new timelineModel;
                     <div class="diskusi-footer">
                         <label for="bukti">Add Media</label>
                         <br class="spasi">
-                        <input type="file" placeholder="Upload media" name="image_file">
+                        <input type="file" placeholder="Upload media" name="image_file" alt="Media">
                         <br>
                         <form action="/?home" method="post">
                             <button class="btn" type="submit">Submit</button>
