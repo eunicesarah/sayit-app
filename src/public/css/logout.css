@@ -17,7 +17,7 @@ body{
 .container{
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     background: #FAF9F4;
     padding: 60px;
 }
@@ -228,11 +228,11 @@ section{
 .input-box{
     position: relative;
     width: 100%;
-    margin-top: 80px;
     background-color: #FAF9F4;
     border: #4560A6;
     border-radius: 10px;
-    padding: 60px;
+    text-align: center;
+    margin-top: 200px;
 }
 
 .input-box label{
