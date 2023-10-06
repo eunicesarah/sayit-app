@@ -69,7 +69,7 @@ class timelineModel extends Database{
 
         if ($stmt->prepare($query)) {
 
-            $this->stmt->bind_param('iiss', $_SESSION["user_id"], $timeline_content, $timeline_path);
+            $stmt->bind_param('iiss', $_SESSION["user_id"], $timeline_content, $timeline_path);
 
             if ($stmt->execute()) {
                 //direct to home
@@ -86,13 +86,13 @@ class timelineModel extends Database{
     }
 
     public function deleteTimeline($timelineID){
-        $query = 'DELETE FROM timeline WHERE timeline_id = $_GET["timeline_id"]';
+        $query = 'DELETE FROM timeline WHERE timeline_id = ?';
         $mysqli = require  __DIR__ . '/../../db.php';
         $stmt = $mysqli->stmt_init();
 
         if ($stmt->prepare($query)) {
 
-            $this->stmt->bind_param('i', $timelineID);
+            $stmt->bind_param('i', $timelineID);
 
             if ($stmt->execute()) {
                 //direct to home
@@ -119,7 +119,8 @@ class timelineModel extends Database{
 
             if ($stmt->execute()) {
                 //direct to home
-                header('Location: /?ruangdiskusi');
+                // header('Location: /?ruangdiskusi');
+                echo "<script>window.location.href='/?ruangdiskusi';</script>";
             } else {
                 echo $mysqli->error;
             }

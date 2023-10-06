@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 require_once __DIR__ . "/../db.php"; 
 require_once __DIR__ . "/../app/models/timelineModel.php";
 
@@ -53,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         }
                         else {
                             echo "<script>alert('Please login first!')</script>";
+                            echo "gnekj";
                             echo "<script>window.location.href='/?Login';</script>";
                         }
                     }
@@ -68,8 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 echo "<script>window.location.href='/?ruangdiskusi';</script>";
             }
         }
+        else {
+            echo "<script>console.log('masuk sini')</script>";
+            $addTimeline = new timelineModel;
+            $addTimeline->postTimeline($_SESSION["user_id"], $_POST['timeline_content'], $currentDateTime, '');
+        }
     } else {
         echo "<script>alert('Please login first!')</script>";
+        echo "gnekj";
         echo "<script>window.location.href='/?Login';</script>";
     }
 }
