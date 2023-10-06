@@ -63,24 +63,7 @@ $timelineModel = new timelineModel;
                     // echo '<source src="/src/public/media/'. ($row['timeline_path']) . '" type="video/mp4">';
                     // echo '</video>';
                     // echo '<script>console.log("haaha" . $_SESSION["roles"])</script>';
-                    if (isset($_SESSION["user_id"])) {
-                        $roles = mysqli_query($conn, "SELECT roles FROM user WHERE user_id = '" . $_SESSION["user_id"] . "'");
-                        // $roles = mysqli_fetch_assoc($roles);
-                        $roles = mysqli_fetch_assoc($roles);
-                        if ($roles['roles'] === "admin") {
-                            // echo '<form action="/src/backend/editTimeline.php" method="post">';
-                            echo '<input type="hidden" name="timeline_id" value="' . $row['timeline_id'] . '">';
-                            echo '<a class="btn edit-button" href="/?edit">Edit</a>';
-                            // echo '</form>';
-                            echo '<form action="/src/backend/deleteTimeline.php" method="post">';
-                            echo '<input type="hidden" name="timeline_id" value="' . $row['timeline_id'] . '">';
-                            echo '<button class="btn delete-button" name="delete")">Delete</button>';
-                            echo '</form>';
-
-                            echo '<br>';
-
-                        }
-                    }
+                   
                     if ($row['timeline_path']) {
                         $media_path = "/src/public/media/" . $row['timeline_path'];
                         $file_extension = pathinfo($media_path, PATHINFO_EXTENSION);
@@ -104,6 +87,24 @@ $timelineModel = new timelineModel;
                     echo '</div>';
                     echo '<div class="diskusi-body">';
                     echo '<p>' . $row["timeline_content"] . '</p>';
+                    if (isset($_SESSION["user_id"])) {
+                        $roles = mysqli_query($conn, "SELECT roles FROM user WHERE user_id = '" . $_SESSION["user_id"] . "'");
+                        // $roles = mysqli_fetch_assoc($roles);
+                        $roles = mysqli_fetch_assoc($roles);
+                        if ($roles['roles'] === "admin") {
+                            // echo '<form action="/src/backend/editTimeline.php" method="post">';
+                            // echo '<input type="hidden" name="timeline_id" value="' . $row['timeline_id'] . '">';
+                            echo '<br>';
+                            echo '<a class="btn edit-button" href="?edit/index.php&timeline_id=' . $row['timeline_id'] . '">Edit</a>';
+                            echo '<form action="/src/backend/deleteTimeline.php" method="post">';
+                            echo '<input type="hidden" name="timeline_id" value="' . $row['timeline_id'] . '">';
+                            echo '<button class="btn delete-button" name="delete")">Delete</button>';
+                            echo '</form>';
+
+                            echo '<br>';
+
+                        }
+                    }
 
                     echo '</div>';
                     echo '<div class="diskusi-footer">';
