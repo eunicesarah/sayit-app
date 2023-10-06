@@ -148,19 +148,19 @@ $timelineModel = new timelineModel;
 
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="row">
-                <div class="footer-col">
-                    <ul>
-                        <img src="/src/public/img/gimmick.png" alt="logo" class="logofooter">
-                        <li><a class="footer-content">SayIt adalah platform yang mewadahi pendidikan seks dan pelaporan
+            <div class="footer-container">
+                <div class="row">
+                    <div class="footer-col">
+                        <ul>
+                            <img src="/src/public/img/gimmick.png" alt="logo" class="logofooter">
+                            <li><a class="footer-content">SayIt adalah platform yang mewadahi pendidikan seks dan pelaporan
                                 pelecehan seksual</a></li>
-                        <li><a class="footer-content">Contact Us</a></li>
-                    </ul>
+                            <li><a class="footer-content">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
     </footer>
 
     <script src="/src/public/js/ruangdiskusi.js"></script>
