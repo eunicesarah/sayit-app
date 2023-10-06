@@ -38,5 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             updateProfileButton.style.display = "block";
         }
+    
     }
 });

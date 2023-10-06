@@ -14,12 +14,39 @@
         $result = $mysqli->query($sql);
         $user = $result->fetch_assoc();
     }
+
+    // Fungsi untuk menghapus akun
+    function deleteAccount() {
+        $servername = "db";
+        $username = "php_docker";
+        $password = "password";
+        $dbname = "php_docker";
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+        if (!$conn) {
+            die("Koneksi ke database gagal: " . mysqli_connect_error());
+        }
+
+        $user_id = $_SESSION["user_id"];
+
+        $deleteUserQuery = "DELETE FROM user WHERE user_id = '$user_id'";
+        if (mysqli_query($conn, $deleteUserQuery)) {
+
+            session_destroy();
+            header("Location: /?login");
+            exit;
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+    }
+
     if (isset($_POST['update_profile'])) {
         $servername = "db";
         $username = "php_docker";
         $password = "password";
         $dbname = "php_docker";
         $conn = mysqli_connect($servername, $username, $password, $dbname);
+
         if (!$conn) {
             die("Koneksi ke database gagal: " . mysqli_connect_error());
         }
@@ -41,19 +68,19 @@
             $newPhone = mysqli_real_escape_string($conn, $_POST['user_phone']);
         }
         
-   
-        // Validasi input sesuai kebutuhan Anda
-    
-        // Update data pengguna di database
+
         $updateQuery = "UPDATE user SET user_name = '$newName', user_email = '$newEmail', user_phone = '$newPhone' WHERE user_id = '$user_id'";
         if (mysqli_query($conn, $updateQuery)) {
-            // Redirect atau berikan pesan sukses, misalnya:
+           
             header("Location: /?profile");
             exit;
         } else {
-            // Handle kesalahan jika gagal melakukan pembaruan
             echo "Error: " . mysqli_error($conn);
         }
+    }
+
+    if (isset($_POST['delete_account'])) {
+        deleteAccount();
     }
 ?>
 
@@ -91,7 +118,7 @@
                 <input type="text" id="user_phone" name="user_phone" value="<?= $user["user_phone"] ?>" disabled>
                 <button class="edit-button" id="edit-phone-button" type="button">Edit</button>
                 </div>
-
+                <button type="submit" id="delete_account" name="delete_account">Delete Account</button>
                 <button type="submit" id="update_profile" name="update_profile" style="display: none;">Update</button>
 
             </form>
