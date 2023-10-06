@@ -7,26 +7,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate name
     if (empty($_POST['name'])) {
         $errors[] = 'Please enter your name';
-        echo "<script>alert('Please enter your name!')</script>";
+        // echo "<script>alert('Please enter your name!')</script>";
         echo "<script>window.location.href='/?signup';</script>";
     }
 
     // Validate email
     if (empty($_POST['email'])) {
         $errors[] = 'Please enter your email';
-        echo "<script>alert('Please enter your email!')</script>";
+        // echo "<script>alert('Please enter your email!')</script>";
         echo "<script>window.location.href='/?signup';</script>";
     } 
     elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Invalid email format';
-        echo "<script>alert('Please enter a valid email!')</script>";
+        // echo "<script>alert('Please enter a valid email!')</script>";
         echo "<script>window.location.href='/?signup';</script>";
     }
 
     // Validate phone number
     if (empty($_POST['phone'])) {
         $errors[] = 'Please enter your phone number';
-        echo "<script>alert('Please enter your phone number!')</script>";
+        // echo "<script>alert('Please enter your phone number!')</script>";
         echo "<script>window.location.href='/?signup';</script>";
     } 
     // elseif (!preg_match('^\(\+62|62|0)8[1-9][0-9]{6,9}$^', $_POST['phone'])){
@@ -46,11 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate password
     if (empty($_POST['password'])) {
         $errors[] = 'Please enter your password';
-        echo "<script>alert('Please enter your password!')</script>";
+        // echo "<script>alert('Please enter your password!')</script>";
         echo "<script>window.location.href='/?signup';</script>";
     } elseif (strlen($_POST['password']) < 8) {
         $errors[] = 'Password must be at least 8 characters long';
-        echo "<script>alert('Please enter your password!')</script>";
+        // echo "<script>alert('Please enter your password!')</script>";
         echo "<script>window.location.href='/?signup';</script>";
     }
 

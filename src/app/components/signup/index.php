@@ -22,25 +22,29 @@ $page = "SignUp";
     <section class="signupcont">
         <div class="boxsignup">
             <h1 class="judulsignup">Sign Up</h1>
-            <form class="form" action="/src/backend/validate-signup.php" method="post">
+            <form class="form" action="/src/backend/validate-signup.php" method="post" id="form" >
                 <div class="column">
                     <div class="input-box">
                         <label for="name" class="labelsignup">Name</label><br>
                         <input type="text" id="name" name="name">
+                        <div class="error"></div>
                     </div>
                     <div class="input-box">
                         <label for="email" class="labelsignup">Email</label><br>
                         <input type="text" id="email" name="email">
+                        <div class="error"></div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="input-box">
                         <label for="phone" class="labelsignup">Phone Number</label><br>
                         <input type="tel" id="phone" name="phone">
+                        <div class="error"></div>
                     </div>
                     <div class="input-box">
                         <label for="password" class="labelsignup">Password</label><br>
                         <input type="password" id="password" name="password">
+                        <div class="error"></div>
                     </div>
                 </div>
                 <br>
@@ -81,5 +85,6 @@ $page = "SignUp";
 
     <script src="/src/public/js/signup.js"></script>
 </body>
+
 
 </html>

@@ -62,14 +62,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php if (($is_invalid) && isset($is_invalid)): ?>
                 <em>Invalid login</em>
             <?php endif; ?>
-            <form class="form" method="post">
+            <form class="form" method="post" id='form'>
                 <div class="input-box">
                     <label for="email" class="labelsignup">E-mail</label><br>
                     <input type="text" id="email" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+                    <div class="error"></div>
+
                 </div>
                 <div class="input-box">
                     <label for="password" class="labelsignup">Password</label><br>
                     <input type="password" id="password" name="password">
+                    <div class="error"></div>
+
                 </div>
                 <div class="submit-button">
                 <button type="submit" class="btn" id="login">Log In</button><br>
@@ -92,6 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
         </footer>
+        <script src="/src/public/js/signup.js"></script>
+
 </body>
 
 </html>
