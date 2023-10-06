@@ -196,7 +196,7 @@ section{
 .boxsignup{
     margin-top: 80px;
     width: cont(100% - 150px);
-    height: 486px;
+    height: 450px;
     background: linear-gradient(#4560A6, #1E1E1E);
     border-radius: 25px;
     align-items: center;
@@ -209,6 +209,7 @@ section{
     text-align: center;
     color: #FAF9F4;
     padding-top: 1.2rem;
+    font-size: 40px;
 }
 
 .labelsignup label{
