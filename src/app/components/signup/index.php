@@ -82,8 +82,6 @@ $page = "SignUp";
                 </div>
             </div>
         </footer>
-
-    <script src="/src/public/js/signup.js"></script>
 </body>
 
 

@@ -96,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
         </footer>
-        <script src="/src/public/js/signup.js"></script>
 
 </body>
 

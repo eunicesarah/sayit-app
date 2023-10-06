@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Oct 05, 2023 at 04:18 PM
+-- Generation Time: Oct 06, 2023 at 04:42 PM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -42,10 +42,10 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`article_id`, `article_judul`, `article_content`, `article_date`, `article_image`, `article_video`, `article_category`) VALUES
-(1, 'Pentingnya Pendidikan Seksual', 'Artikel ini menjelaskan konsep psikologi seksual dan dampaknya pada individu.', '2023-08-20 15:57:00.000000', 'src\\public\\img\\profile.jpg', NULL, 'Psikologi Seksual'),
-(2, 'Seksualitas pada Usia Lanjut\r\n\r\n', 'Artikel ini membahas tentang seksualitas pada usia lanjut dan cara menjaga kesehatan seksual saat tua.', '2023-09-05 15:57:00.000000', 'src\\public\\img\\profile.jpg', NULL, 'Kesehatan Lansia'),
-(3, 'Pendidikan Seksual dalam Keluarga\r\n\r\n', 'Artikel ini mendiskusikan pentingnya pendidikan seksual di dalam lingkungan keluarga dan bagaimana orang tua dapat mengintegrasikannya dalam keseharian.', '2023-09-20 16:03:06.000000', 'src\\public\\img\\profile.jpg', NULL, 'Pendidikan Seksual Umum'),
-(4, 'Keamanan Seksual dalam Hubungan', 'Artikel ini menyoroti isu-isu keamanan seksual dan langkah-langkah untuk menjaga keamanan dalam hubungan intim.', '2023-10-05 16:03:06.000000', 'src\\public\\img\\profile.jpg', NULL, 'Keamanan Seksual'),
+(1, 'Pentingnya Pendidikan Seksual', 'Artikel ini menjelaskan konsep psikologi seksual dan dampaknya pada individu.', '2023-08-20 15:57:00.000000', NULL, NULL, 'Psikologi Seksual'),
+(2, 'Seksualitas pada Usia Lanjut\r\n\r\n', 'Artikel ini membahas tentang seksualitas pada usia lanjut dan cara menjaga kesehatan seksual saat tua.', '2023-09-05 15:57:00.000000', NULL, NULL, 'Kesehatan Lansia'),
+(3, 'Pendidikan Seksual dalam Keluarga\r\n\r\n', 'Artikel ini mendiskusikan pentingnya pendidikan seksual di dalam lingkungan keluarga dan bagaimana orang tua dapat mengintegrasikannya dalam keseharian.', '2023-09-20 16:03:06.000000', NULL, NULL, 'Pendidikan Seksual Umum'),
+(4, 'Keamanan Seksual dalam Hubungan', 'Artikel ini menyoroti isu-isu keamanan seksual dan langkah-langkah untuk menjaga keamanan dalam hubungan intim.', '2023-10-05 16:03:06.000000', NULL, NULL, 'Keamanan Seksual'),
 (5, 'Seksualitas Remaja dan Pendidikan', 'Artikel ini membahas perubahan seksual pada remaja dan pentingnya pendidikan seksual yang sesuai dengan usia mereka.', '2023-10-20 16:03:06.000000', NULL, NULL, 'Pendidikan Remaja'),
 (6, 'Pentingnya Kesehatan Mental Seksual', 'Artikel tentang pentingnya mendukung individu dalam menjaga kesehatan mental terkait dengan aspek-aspek seksualitas.', '2023-11-05 16:03:06.000000', NULL, NULL, 'Kesehatan Mental'),
 (7, 'Kesehatan Reproduksi dan Pendidikan', 'Artikel ini menjelaskan tentang kesehatan reproduksi, kebutuhan pendidikan dalam hal ini, serta bagaimana menjaga kesehatan reproduksi.', '2023-11-20 16:03:06.000000', NULL, NULL, 'Kesehatan Reproduksi'),
@@ -73,7 +73,7 @@ CREATE TABLE `lapor` (
   `lapor_tanggal` date NOT NULL,
   `lapor_waktu` time(4) NOT NULL,
   `lapor_kronologi` longtext NOT NULL,
-  `lapor_bukti` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `lapor_bukti` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `lapor_status` varchar(20) NOT NULL,
   `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -83,12 +83,36 @@ CREATE TABLE `lapor` (
 --
 
 INSERT INTO `lapor` (`lapor_id`, `lapor_jenis`, `lapor_nama`, `lapor_lokasi`, `lapor_tanggal`, `lapor_waktu`, `lapor_kronologi`, `lapor_bukti`, `lapor_status`, `user_id`) VALUES
-(1, 'Saksi', 'Syauqi', 'ITB', '2023-10-02', '17:44:00.0000', 'blablabla', '', 'pending', 3),
-(2, 'Saksi', 'Syauqi', 'Unpad', '2023-10-03', '17:50:00.0000', 'hahahahihihi', '', 'pending', 3),
-(3, 'Saksi', 'Uki', 'Jl Sayang', '2023-10-01', '18:52:00.0000', 'auooo', '', 'pending', 3),
-(4, 'Saksi', 'agso', 'Unpad', '2023-10-04', '13:55:00.0000', 'hahaha', '', 'pending', 3),
-(5, 'Korban', 'jojo', 'Unpad', '2023-10-02', '15:58:00.0000', 'jjjjjj', '', 'pending', 3),
-(6, 'Saksi', 'Uki', 'ITB', '2023-10-04', '17:00:00.0000', 'acsdsadaadas', '', 'pending', 3);
+(1, 'Korban', 'salman', 'itb nangor', '2023-10-02', '08:40:00.0000', 'ASDFGHJKLfghjkb', '', 'pending', 3),
+(2, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(3, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(4, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(5, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(6, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(7, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(8, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(9, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(10, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(11, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(12, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(13, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdfghj', '', 'pending', 3),
+(14, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdf', '', 'in_progress', 3),
+(15, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdf', '', 'pending', 3),
+(16, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdf', '', 'pending', 3),
+(17, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdf', '', 'completed', 3),
+(18, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdf', '', 'in_progress', 3),
+(19, 'Korban', 'salman', 'itb nangor', '2023-10-05', '09:06:00.0000', 'asdfghjklkjhgfdsasdf', '', 'pending', 3),
+(20, 'Saksi', 'agsah', 'unpad', '2023-10-02', '20:58:00.0000', 'fdghjkljhgfc', '', 'pending', 3),
+(21, 'Korban', 'keni', 'ipdn', '2023-10-02', '21:26:00.0000', 'sdfghjfghnm', '', 'pending', 3),
+(22, 'Saksi', 'atun', 'jakarta', '2023-10-11', '21:22:00.0000', 'masa iya', '', 'pending', 5),
+(23, 'Korban', 'logi', 'jatos', '2023-10-06', '19:23:00.0000', 'loh', '', 'pending', 5),
+(24, 'Saksi', 'anjing', 'jakarta', '2023-07-04', '21:30:00.0000', 'yayyaa', '', 'pending', 5),
+(25, 'Saksi', 'salman', 'bandung', '2020-02-06', '21:31:00.0000', 'kahdkas', '', 'pending', 5),
+(26, 'Korban', 'sayu', 'unpad', '2024-01-17', '16:32:00.0000', 'sdfghj', 'Playlist LALATA.png', 'pending', 5),
+(27, 'Korban', 'sayu', 'itb nangor', '2023-04-13', '01:34:00.0000', 'dsfghjk', 'Logo_8_EH putih.png', 'pending', 5),
+(28, 'Korban', 'sayu', 'jakarta', '2023-11-02', '02:44:00.0000', 'asda', NULL, 'pending', 5),
+(29, 'Korban', 'sayu', 'jakarta', '2023-11-02', '02:44:00.0000', 'asda', 'Logo_8_EH putih.png', 'pending', 5),
+(30, 'Korban', 'sayu', 'unpad', '2023-10-04', '23:50:00.0000', 'sfdsdf', 'lalata.png', 'pending', 5);
 
 -- --------------------------------------------------------
 
@@ -147,8 +171,8 @@ CREATE TABLE `pma__column_info` (
 --
 
 CREATE TABLE `pma__designer_settings` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `settings_data` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `settings_data` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Settings related to Designer';
 
 -- --------------------------------------------------------
@@ -159,10 +183,10 @@ CREATE TABLE `pma__designer_settings` (
 
 CREATE TABLE `pma__export_templates` (
   `id` int UNSIGNED NOT NULL,
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `export_type` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `template_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `template_data` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `export_type` varchar(10) COLLATE utf8mb3_bin NOT NULL,
+  `template_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `template_data` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Saved export templates';
 
 -- --------------------------------------------------------
@@ -172,8 +196,8 @@ CREATE TABLE `pma__export_templates` (
 --
 
 CREATE TABLE `pma__favorite` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `tables` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `tables` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Favorite tables';
 
 -- --------------------------------------------------------
@@ -184,11 +208,11 @@ CREATE TABLE `pma__favorite` (
 
 CREATE TABLE `pma__history` (
   `id` bigint UNSIGNED NOT NULL,
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `db` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `table` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `db` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `table` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `sqlquery` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `sqlquery` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='SQL history for phpMyAdmin';
 
 -- --------------------------------------------------------
@@ -198,11 +222,11 @@ CREATE TABLE `pma__history` (
 --
 
 CREATE TABLE `pma__navigationhiding` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `item_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `item_type` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `table_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `item_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `item_type` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `table_name` varchar(64) COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Hidden items of navigation tree';
 
 -- --------------------------------------------------------
@@ -212,7 +236,7 @@ CREATE TABLE `pma__navigationhiding` (
 --
 
 CREATE TABLE `pma__pdf_pages` (
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
   `page_nr` int UNSIGNED NOT NULL,
   `page_descr` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='PDF relation pages for phpMyAdmin';
@@ -224,8 +248,8 @@ CREATE TABLE `pma__pdf_pages` (
 --
 
 CREATE TABLE `pma__recent` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `tables` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `tables` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Recently accessed tables';
 
 --
@@ -233,7 +257,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('php_docker', '[{\"db\":\"php_docker\",\"table\":\"timeline\"},{\"db\":\"php_docker\",\"table\":\"lapor\"},{\"db\":\"php_docker\",\"table\":\"article\"},{\"db\":\"php_docker\",\"table\":\"user\"}]');
+('php_docker', '[{\"db\":\"php_docker\",\"table\":\"user\"},{\"db\":\"php_docker\",\"table\":\"timeline\"},{\"db\":\"php_docker\",\"table\":\"lapor\"},{\"db\":\"php_docker\",\"table\":\"article\"}]');
 
 -- --------------------------------------------------------
 
@@ -242,12 +266,12 @@ INSERT INTO `pma__recent` (`username`, `tables`) VALUES
 --
 
 CREATE TABLE `pma__relation` (
-  `master_db` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `master_table` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `master_field` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `foreign_db` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `foreign_table` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `foreign_field` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT ''
+  `master_db` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `master_table` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `master_field` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `foreign_db` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `foreign_table` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `foreign_field` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Relation table';
 
 -- --------------------------------------------------------
@@ -258,10 +282,10 @@ CREATE TABLE `pma__relation` (
 
 CREATE TABLE `pma__savedsearches` (
   `id` int UNSIGNED NOT NULL,
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `search_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `search_data` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `search_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `search_data` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Saved searches';
 
 -- --------------------------------------------------------
@@ -271,8 +295,8 @@ CREATE TABLE `pma__savedsearches` (
 --
 
 CREATE TABLE `pma__table_coords` (
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `table_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
   `pdf_page_number` int NOT NULL DEFAULT '0',
   `x` float UNSIGNED NOT NULL DEFAULT '0',
   `y` float UNSIGNED NOT NULL DEFAULT '0'
@@ -285,9 +309,9 @@ CREATE TABLE `pma__table_coords` (
 --
 
 CREATE TABLE `pma__table_info` (
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
-  `display_field` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT ''
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `table_name` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `display_field` varchar(64) COLLATE utf8mb3_bin NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Table information for phpMyAdmin';
 
 -- --------------------------------------------------------
@@ -297,19 +321,12 @@ CREATE TABLE `pma__table_info` (
 --
 
 CREATE TABLE `pma__table_uiprefs` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `table_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `prefs` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `table_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `prefs` text COLLATE utf8mb3_bin NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Tables'' UI preferences';
-
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('php_docker', 'php_docker', 'timeline', '[]', '2023-10-05 15:31:46');
 
 -- --------------------------------------------------------
 
@@ -318,15 +335,15 @@ INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, 
 --
 
 CREATE TABLE `pma__tracking` (
-  `db_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `table_name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `db_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `table_name` varchar(64) COLLATE utf8mb3_bin NOT NULL,
   `version` int UNSIGNED NOT NULL,
   `date_created` datetime NOT NULL,
   `date_updated` datetime NOT NULL,
-  `schema_snapshot` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `schema_sql` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin,
-  `data_sql` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
+  `schema_snapshot` text COLLATE utf8mb3_bin NOT NULL,
+  `schema_sql` text COLLATE utf8mb3_bin,
+  `data_sql` longtext COLLATE utf8mb3_bin,
+  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8mb3_bin DEFAULT NULL,
   `tracking_active` int UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Database changes tracking for phpMyAdmin';
 
@@ -337,9 +354,9 @@ CREATE TABLE `pma__tracking` (
 --
 
 CREATE TABLE `pma__userconfig` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `config_data` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `config_data` text COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='User preferences storage for phpMyAdmin';
 
 --
@@ -347,7 +364,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('php_docker', '2023-10-05 16:11:55', '{\"Console\\/Mode\":\"collapse\",\"NavigationWidth\":239.977}');
+('php_docker', '2023-10-06 16:41:29', '{\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
@@ -356,9 +373,9 @@ INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
 --
 
 CREATE TABLE `pma__usergroups` (
-  `usergroup` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `tab` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `allowed` enum('Y','N') CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT 'N'
+  `usergroup` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `tab` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `allowed` enum('Y','N') COLLATE utf8mb3_bin NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='User groups with configured menu items';
 
 -- --------------------------------------------------------
@@ -368,8 +385,8 @@ CREATE TABLE `pma__usergroups` (
 --
 
 CREATE TABLE `pma__users` (
-  `username` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `usergroup` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+  `username` varchar(64) COLLATE utf8mb3_bin NOT NULL,
+  `usergroup` varchar(64) COLLATE utf8mb3_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin COMMENT='Users and their assignments to user groups';
 
 -- --------------------------------------------------------
@@ -382,17 +399,9 @@ CREATE TABLE `timeline` (
   `user_id` int NOT NULL,
   `timeline_id` int NOT NULL,
   `timeline_content` longtext NOT NULL,
-  `timeline_date` date NOT NULL,
-  `timeline_path` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci
+  `timeline_date` datetime(6) NOT NULL,
+  `timeline_path` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `timeline`
---
-
-INSERT INTO `timeline` (`user_id`, `timeline_id`, `timeline_content`, `timeline_date`, `timeline_path`) VALUES
-(1, 16, 'halo ini v', '2023-10-05', 'MD-651ee070c33d48.96464154.mp4'),
-(1, 17, 'halo ini say it', '2023-10-05', 'MD-651ee081c464c5.49218945.png');
 
 -- --------------------------------------------------------
 
@@ -417,8 +426,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_pass`, `user_gender`, `user_phone`, `roles`) VALUES
 (1, 'Salman H', 'salman@admin.com', 'admin123', 'Male', 87777876, 'admin'),
 (2, 'Athallia', 'athallia@admin.com', 'admin123', 'Female', 812732123, 'admin'),
-(3, 'Syauqi', 'syauqi@gmail.com', 'syauqi123', 'Male', 68326291, '0'),
-(4, 'Nana', 'nana@ymail.com', 'nanana123', 'Female', 813147, '0');
+(3, 'eunice', 'eunicesarah011@gmail.com', '12345678', 'Female', 813152, '0'),
+(5, 'Eunice', 'eunicesiregar@yahoo.co.id', '12345678', 'Female', 813152827, '0');
 
 --
 -- Indexes for dumped tables
@@ -568,9 +577,7 @@ ALTER TABLE `timeline`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`user_email`),
-  ADD UNIQUE KEY `phone` (`user_phone`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -586,19 +593,7 @@ ALTER TABLE `article`
 -- AUTO_INCREMENT for table `lapor`
 --
 ALTER TABLE `lapor`
-  MODIFY `lapor_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `lapor_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `pma__export_templates`
@@ -625,32 +620,10 @@ ALTER TABLE `pma__savedsearches`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `timeline`
---
-ALTER TABLE `timeline`
-  MODIFY `timeline_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `lapor`
---
-ALTER TABLE `lapor`
-  ADD CONSTRAINT `lapor_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `timeline`
---
-ALTER TABLE `timeline`
-  ADD CONSTRAINT `timeline_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
