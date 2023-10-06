@@ -26,7 +26,7 @@ $page = "Lapor";
     <section class="container">
         <div class="form-lapor">
             <h3 class="judul">Form Laporan Pelecehan Seksual</h3>
-            <form action="/src/backend/validate-lapor.php" class="form" method="post">
+            <form action="/src/backend/validate-lapor.php" class="form" method="post" enctype="multipart/form-data">
                 <div class="radio">
                     <p>Saya adalah...</p>
                     <input type="radio" name="jenis" value="Korban">Saya Korban</input>
@@ -58,13 +58,13 @@ $page = "Lapor";
                         placeholder="Ceritakan kronologi kejadian" required></textarea>
                 </div>
                 <div class="bukti">
-                    <label for="bukti">Bukti</label>
+                    <label>Bukti</label>
                     <br class="spasi">
-                    <input type="file" placeholder="Upload bukti" name="bukti">
+                    <input type="file" placeholder="Upload bukti" name="lapor_bukti">
                     <br>
                 </div>
                 <div class="submit-button">
-                    <form action="/?home" method="post">
+                    <form action="/?lapor" method="post">
                         <button class="btn" type="submit">Submit</button>
                     </form>
                 </div>
