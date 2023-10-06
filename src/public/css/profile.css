@@ -373,14 +373,6 @@ section{
     flex-direction: column;
   }
   
-  .profile-form-container {
-    width: 300px;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-  }
-  
   h1 {
     text-align: center;
   }
@@ -398,9 +390,6 @@ section{
   }
   
 
-  
-
-  
   button[type="submit"] {
     background-color: #28a745;
     color: white;
@@ -417,7 +406,7 @@ section{
   .label-container {
     display: flex;
     align-items: center;
-
+    padding: 10px;
   }
   
 
@@ -442,3 +431,15 @@ section{
   button.edit-button:hover {
     background-color: #0056b3;
   }
+
+  .boxsignup{
+    margin-top: 80px;
+    width: cont(100%-50px);
+    height: 350px;
+    background: linear-gradient(#4560A6, #1E1E1E);
+    border-radius: 25px;
+    align-items: center;
+    padding: 60px;
+    text-align: center;
+    color: #FAF9F4;
+}

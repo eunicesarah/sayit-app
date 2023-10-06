@@ -72,7 +72,7 @@
 
     <section class="container">
 
-        <div class="profile-form-container">
+        <div class="boxsignup">
             <form id="edit-profile-form" method="POST">
                 <h1>Profile</h1>
                 <div class="label-container">
@@ -87,7 +87,7 @@
                 <button class="edit-button" id="edit-email-button" type="button">Edit</button>
                 </div>
                 <div class="label-container">
-                <label for="phone">No Telpon:</label>
+                <label for="phone">Phone:</label>
                 <input type="text" id="user_phone" name="user_phone" value="<?= $user["user_phone"] ?>" disabled>
                 <button class="edit-button" id="edit-phone-button" type="button">Edit</button>
                 </div>
