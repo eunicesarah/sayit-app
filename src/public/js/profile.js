@@ -39,49 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
             updateProfileButton.style.display = "block";
         }
     }
-    // profile.js
-
-// ...
-const deleteAccountButton = document.getElementById("delete_account_button");
-
-// Tambahkan event listener untuk tombol "Delete Account"
-deleteAccountButton.addEventListener("click", function () {
-    const confirmDelete = confirm("Anda yakin ingin menghapus akun Anda?");
-
-    if (confirmDelete) {
-        // Redirect atau lakukan penghapusan akun di sini
-
-        deleteAccount();
-    }
-});
-
-function deleteAccount() {
-    // Lakukan permintaan AJAX atau penghapusan akun ke server di sini
-    // Setelah berhasil menghapus akun, lakukan langkah-langkah berikut:
-
-    // 1. Hapus semua session
-    // 2. Lakukan logout
-    // 3. Redirect ke halaman lain (misalnya halaman login)
-    
-    // Contoh penghapusan semua session:
-    fetch("/logout.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-    .then(function(response) {
-        if (response.ok) {
-            // Logout berhasil, arahkan ke halaman login atau halaman lain
-            window.location.href = "/login.php"; // Ganti dengan halaman yang sesuai
-        } else {
-            // Handle kesalahan jika logout gagal
-            console.error("Gagal logout");
-        }
-    })
-    .catch(function(error) {
-        console.error("Terjadi kesalahan:", error);
-    });
-}
-
 });
