@@ -89,7 +89,21 @@ $result = mysqli_query($conn, $query);
                         echo "<td>" . $row["lapor_tanggal"] . "</td>";
                         echo "<td>" . $row["lapor_waktu"] . "</td>";
                         echo "<td>" . $row["lapor_kronologi"] . "</td>";
-                        echo "<td><a href='#'>View</a></td>";
+                        echo "<td>" ;
+                        if ($row["lapor_bukti"]) {
+                            $bukti_path = "/src/public/bukti/" . $row['lapor_bukti'];
+                            $file_extension = pathinfo($bukti_path, PATHINFO_EXTENSION);
+                        
+                            if (in_array($file_extension, ['jpg', 'jpeg', 'png', 'gif'])) {
+                                // Tampilkan gambar jika ekstensi file adalah gambar
+                                echo '<img src="' . $bukti_path . '">';
+                            } elseif ($file_extension == 'mp4') {
+                                // Tampilkan video jika ekstensi file adalah mp4
+                                echo '<video width="320" height="240" controls>';
+                                echo '<source src="' . $bukti_path . '" type="video/mp4">';
+                                echo '</video>';
+                            }
+                        }"</td>";
                         echo "<td>";
                         echo "<select name='lapor_status[]'>";
                         echo "<option value='pending' " . ($row["lapor_status"] == 'pending' ? 'selected' : '') . ">Pending</option>";

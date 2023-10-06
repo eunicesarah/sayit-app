@@ -295,3 +295,15 @@ select:hover {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+vide{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
